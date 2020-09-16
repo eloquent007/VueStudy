@@ -4,6 +4,7 @@
 
 // 1.숫자/문자열 배열에서 중복 제거하기
 // 이것은 map/reduce/filter 에 해당되지 않는 것인데, 이 리스트에서 제외시키기에는 너무 간결하다. 다음에 나올 예시들에도 나올 것이다.
+// 추가1 : Dictionary로 처리하는것 보다 set 이 빠르다.
 
 let values = [3, 1, 3, 5, 2, 4, 4, 4];
 let uniqueValues = [...new Set(values)];
@@ -11,9 +12,12 @@ let uniqueValues = [...new Set(values)];
 
 console.log('uniqueValues : ', uniqueValues);
 
+let ss =[...new Set(values)];
+console.log('ss : ', ss);
+
 //########################################################################################################
 
-
+/*
 // 2. 간단한 검색(case-sensitive)
 console.clear();
 // filter() 함수는 인자로 제공되는 함수에 의해 test 를 통과한 모든 요소를 새로운 array 로 만든다.
@@ -213,3 +217,5 @@ let bb = arrA.filter(it => arrB.includes(it)); // returns [1, 2]
 // 자세한 내용과 질문은 원문을 참고하시기 바랍니다. 원문의 댓글에 참고할 만한 링크가 있어 아래 남깁니다.
 console.log('bb : ', bb); 
 }
+
+*/
