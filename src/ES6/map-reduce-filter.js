@@ -12,12 +12,10 @@ let uniqueValues = [...new Set(values)];
 
 console.log('uniqueValues : ', uniqueValues);
 
-let ss =[...new Set(values)];
-console.log('ss : ', ss);
 
 //########################################################################################################
 
-/*
+
 // 2. 간단한 검색(case-sensitive)
 console.clear();
 // filter() 함수는 인자로 제공되는 함수에 의해 test 를 통과한 모든 요소를 새로운 array 로 만든다.
@@ -28,10 +26,12 @@ let users = [
   { id: 97, name: 'Oliver', age: 28, group: 'admin' }
 ];
 let res = users.filter(it => it.name.includes('Oli'));
+// let res = users.filter(it => it.group.includes('admin'));
 // res is []
 console.log('res : ', res);
 
 //########################################################################################################
+
 
 // 3. 간단한 검색(case-insensitive)
 console.clear();
@@ -41,6 +41,8 @@ let res = users.filter(it => new RegExp('oli', "i").test(it.name));
 console.log('res : ', res);
 }
 
+
+/*
 //########################################################################################################
 console.clear();
 // 4. 특정 유저가 admin 권한을 갖고 있는지 확인
