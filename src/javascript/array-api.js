@@ -2,6 +2,7 @@
 {
   const fruits = ["apple", "banana", "orange"];
   const result = fruits.join();
+  // const result = fruits.join('|');
   console.log(result);
 }
 
