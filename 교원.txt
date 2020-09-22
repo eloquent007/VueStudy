@@ -1,0 +1,280 @@
+WI-FI 설정
+kyowoniot_5G / kyowoniot01
+
+
+http://ekp.kyowon.co.kr/
+
+
+slack
+dArtagnan / 1qaz2wsx!@
+
+Postman 계정
+dts.dev.postman@gmail.com / dkdldhs!DTS
+
+eloquent@naver.com / thillum#$007 (개인계정)
+{{protocol}}://{{hostname}}:{{port}}/node/admin/update.json   <-- /node/admin/ 으로 조회가 됨. 그 이후 수정을 할려면 /update.json 을 넣어주고.
+key 에 id를 넣어주면 이게 프라이머리키가 되고 나머지 변경할 값을 key에 넣어주고 value를 넣어주면 그 value로 값이 변경된다.
+C:\dArtagnan\kyowon-backend-core-kwop_dev_phase2\src\main\resources\schema\core\user\kwop\adminSchema.json
+
+
+
+
+
+환경설정파일
+C:\dArtagnan\kyowon-basecamp-kwop_dev_pc\config\loc.config.ts
+
+yarn 2 pc:dev
+
+prd.config.ts 에서 pcHost만 'local.market85.com:9000' 으로 변경후 
+yarn 2 pc:prd 로 하면 api는 실데이터를 가져와서 디버깅 가능함.
+
+
+
+local.i-on.net:9000
+http://local.market85.com:9000/  <--도메인 쿠키문제로 이걸로 봐야함.
+http://local.market85.com:8000
+
+http://10.6.7.104:9100/  <-- 퍼블리싱 
+devadm.market85.com   <--admin
+
+
+URL : https://testpg.easypay.co.kr/webpay/MainAction.do
+EP_mall_id : T0002246
+const SP_RETURN_URL: string = '/responseSubmit';
+
+
+교원 관련 PG사 연락처
+이름 : 이종현
+휴대폰 : 01050409354
+Email : kkjh1020@kicc.co.kr
+
+
+
+VPN계정
+kwop25/kyowon@kwop25 <-- 그전 철훈씨가 쓰던거.
+ID / PW / 사용자 : kwop07 / kyowon@kwop07 / 윤여근
+
+
+하이탐계정
+kwop07 / 1qaz2wsx!@
+kwop38 / 1qaz2wsx!@
+
+
+
+m85dev / m85@88  <-- 서버 접속 계정 (DEV는 동일)
+corelog : 로그보기.
+
+
+
+HI-AUTH.OTP
+패스워드 : 527952
+------------------------------------------------------------------------------
+
+http://172.16.30.188:7000/login?from=%2F   젠킨스
+admin/m85admin
+
+------------------------------------------------------------------------------
+http://ekp.kyowon.co.kr/
+kwop38 / 1qaz2wsx!@
+
+
+------------------------------------------------------------------------------
+DBSAFER AGENT
+kwop38 / 1qaz2wsx!@
+
+
+------------------------------------------------------------------------------
+어드민계정
+
+https://devadm.market85.com:9443/account/admin/SignIn
+https://stgadm.market85.com/account/admin/SignIn
+https://adm.market85.com/account/admin/SignIn
+
+admin001/1234
+
+
+------------------------------------------------------------------------------
+dev.config.ts
+  // appHost: 'devm.market85.com:9443',   // mobile host
+  appHost: 'local.market85.com:8000',   // mobile host
+------------------------------------------------------------------------------
+
+
+
+로그인계정 : testking /1234
+
+결함관리
+https://docs.google.com/spreadsheets/d/1BMVPpf2mQGBOGs-Ka4-Fet_vdawJq4KXywE85yqvRL4/edit#gid=1593508840
+
+결함관리사본
+https://docs.google.com/spreadsheets/d/1LIYv-0W1wgq8U9gHGq4F3T-hklrIErV042k9OpuF_qU/edit#gid=1593508840
+
+
+OP115 : 확인
+
+참고.
+C:\dArtagnan\kyowon\basecamp\src\componentsHtml\common\AddrAddModal.vue
+
+
+
+C:\dArtagnan\kyowon\basecamp\_core\plugin\utils.js
+
+
+$("section#qnb.qnb_sec.fix").css({zIndex:500});
+
+
+$('#container').css('z-index','initial');
+
+
+
+
+ /*   if (this.deliveryData.isBasic) {
+      this.deliveryData.isBasic = false;
+    }else {
+      this.deliveryData.isBasic = true;
+    }*/
+
+    this.deliveryData.isBasic ? this.deliveryData.isBasic = false : this.deliveryData.isBasic = true ;
+
+
+-----------------------------------------------------------------------------------------------------------------------
+  mounted(){
+    const dest = this.$route
+    const lastDomain = dest.fullPath.substring(dest.fullPath.lastIndexOf("/") +1, dest.fullPath.length);
+    this.domain = lastDomain;
+  }
+-----------------------------------------------------------------------------------------------------------------------
+
+    //this.deliveryData.isBasic ? this.deliveryData.isBasic = false : this.deliveryData.isBasic = true ;
+
+
+
+    if (evt.target.classList.contains('is_active')) {
+      evt.target.classList.remove('is_active');
+    } else {
+      evt.target.classList.add('is_active');
+    }
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+
+고정환경변수
+C:\dArtagnan\kyowon\basecamp\src\common\constant\constant.ts
+
+isSigned  로그인유무
+C:\dArtagnan\kyowon-basecamp-kwop_dev_pc\_core\plugin\navigation.ts
+
+
+---------------------------------------------------------------------------------------
+
+커밋방법
+1. Project 최상단 > 마우스오른쪽 > Git>Repository > Push
+2. Git Branches 에서 stg로 변경 > Update
+3. Git Log에서 Branch:origin/.. dev선택 후 dev에서 commit되어 push된 로그를 확인
+4. 해당 항목에서 마우스 오른족 Cherry-Pick 해서 stg에 똑같이 동기화를 한다.
+5. Push 하여 마무리.
+
+
+
+
+
+---------------------------------------------------------------------------------------
+        async rebuildDetailData(data) {
+
+            if (typeof data.communityBoardNo === 'undefined') {
+              this.$router.push('/mpg/myClip');
+              return ;
+            }
+
+
+/*            const communityBoardNo = this.$get(data, 'communityBoardNo', '');
+            if (!communityBoardNo) {
+              return;
+            }*/
+
+C:\dArtagnan\kyowon\basecamp\src\components\kwop\presentational\community\details\CommunityDetails.vue
+goBoardInfo
+
+
+C:\dArtagnan\kyowon\basecamp\src\components\kwop\presentational\cart\PaymentInfoBox.vue
+
+element.querySelector('.item_pos_group').classList.add('on');
+
+
+
+Ctrl+P, Ctrl+Q 
+
+
+모바일은 PC랑 소스가 중복으로 될수 있기 때문에 별도의 폴더를 만들어서 clone해줌.
+PS C:\dArtagnan\kyowon\basecampM> git clone -b kwop_dev_mobile http://dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
+
+
+CommunityPostWriteModal
+
+---------------------------------------------------------------------------------------
+  showPkgItem(item) {
+    if(this.$route.path.indexOf('/shop/packageDetail') < 0){
+      const productId = typeof this.$get(item, 'productId', '') === 'object' ? this.$get(item, 'productId.value', '') : item.productId;
+      this.$router.push(`/shop/packageDetail/${productId}?pkgDetail=YES&subProduct=${this.$get(item, 'subProductId.value')}`);
+      return;
+    }
+
+
+---------------------------------------------------------------------------------------
+교원 core Setting
+
+1. File > Project Structure > Project Settings( > Project > Project SDK : java 1.8
+2. File > Settings > File Encodings(검색해서 찾음) > Global Encoding, Project Encoding, Default : UTF-8 로 변경.
+3.BackendCoreApplication > Active profiles: kwop-staloc 기입.
+    풀검색 : application 검색 > application-kwop-staloc.yml에서 ..kwop-staloc
+4. BackendCoreApplication > Shorten command line : classpath file 로 변경
+
+
+---------------------------------------------------------------------------------------
+C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\resources\schema\kwop\displayMng\bestProduct\api.json
+
+"method": "matching",  DB조건 and
+"method": "matchingShould", DB조건 or 
+"method": "fromto",  DB조건 between 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+{{protocol}}://{{hostname}}:{{port}}/node/api/bestProductApi>bestList  확인.
+
+{{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/displayMng/bestProduct/api.json  로드스키마
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+1. API검색 : {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=bestProductApi>bestList
+    : config의 id를 조회하기 위함이다.
+
+2. API Config 확인 :{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/1037642594
+   : 1에서 조회한 id값으로 조회를 한다.
+
+3. 2에서 조회한 결과에서 설정변경할 값을 key에 value로 세팅한 후 변경한다.
+{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/update.json
+id=863216329
+cacheable=false
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+# 소스 커밋 시 체리픽 오류 해셜 방법
+    * 터미널 혹은 커맨드에서 git 명령어로 리셋한다.
+        - ex) $ git reset --hard origin/kwop_prd_pc(리모트명/복원할 git 브랜치명)
+
+>git reset --hard origin/kwop_prd_pc
+
+
+
+
+
+

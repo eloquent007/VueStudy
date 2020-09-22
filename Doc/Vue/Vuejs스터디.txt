@@ -46,6 +46,9 @@ https://joshua1988.github.io/vue-camp/es6/modules.html#import-export-%EA%B8%B0%E
 js->ts로 변경시.
 https://codingcoding.tistory.com/1254
 
+
+https://joshua1988.github.io/ts/
+
 https://codingcoding.tistory.com/483?category=904331
 
 
