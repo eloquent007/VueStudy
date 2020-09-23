@@ -5,6 +5,8 @@ Clone 명령
 모바일은 PC랑 소스가 중복으로 될수 있기 때문에 별도의 폴더를 만들어서 clone해줌.
 PS C:\dArtagnan\kyowon\basecampM> git clone -b kwop_dev_mobile http://dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
 
+--스테이징PC clone
+git clone -b kwop_sta_phase2 http://dcsf-dev08.i-on.net/dts/kyowon-front-builder.git
 
 
 
