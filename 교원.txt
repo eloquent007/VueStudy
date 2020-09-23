@@ -257,6 +257,7 @@ CommunityPostWriteModal
 
 1. File > Project Structure > Project Settings( > Project > Project SDK : java 1.8
 2. File > Settings > File Encodings(검색해서 찾음) > Global Encoding, Project Encoding, Default : UTF-8 로 변경.
+    (Editor > File Encodings )
 3.BackendCoreApplication > Active profiles: kwop-staloc 기입. <-- api를 local로 잡기때문에 실제 데이터 sta를 가져오기 위함임.
     풀검색 : application 검색 > application-kwop-staloc.yml에서 ..kwop-staloc
 4. BackendCoreApplication > Shorten command line : classpath file 로 변경
@@ -296,6 +297,12 @@ cacheable=false
 
 
 ------------------------------------------------------------------------------------------------------------
+스테이징 가져오는 방법
+스테이징 CORE	M85CO_QA1_CRITE	10.1.104.5	
+해당 서버 : /home/m85dev/apps/resource/cache 를
+로컬 컴퓨터 : C:\Users\resource\kwopsta\cache 에 받아 온다.
+
+
 
 
 
