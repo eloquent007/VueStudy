@@ -302,6 +302,10 @@ cacheable=false
 해당 서버 : /home/m85dev/apps/resource/cache 를
 로컬 컴퓨터 : C:\Users\resource\kwopsta\cache 에 받아 온다.
 
+cd /home/m85dev/apps/resource/
+tar cvf cache_2019_09_23.tar cache  <--chche 폴더 압축하기
+
+
 
 
 
