@@ -1,0 +1,18 @@
+
+###################################################################################
+Clone 명령
+###################################################################################
+모바일은 PC랑 소스가 중복으로 될수 있기 때문에 별도의 폴더를 만들어서 clone해줌.
+PS C:\dArtagnan\kyowon\basecampM> git clone -b kwop_dev_mobile http://dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
+
+
+
+
+# 소스 커밋 시 체리픽 오류 해셜 방법
+    * 터미널 혹은 커맨드에서 git 명령어로 리셋한다.
+        - ex) $ git reset --hard origin/kwop_prd_pc(리모트명/복원할 git 브랜치명)
+
+>git reset --hard origin/kwop_prd_pc
+
+
+

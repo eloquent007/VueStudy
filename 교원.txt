@@ -1,5 +1,6 @@
 WI-FI 설정
-kyowoniot_5G / kyowoniot01
+kyowoniot_5G / kyowoniot01 <--일반
+KYOWON :kwop38/1qaz2wsx!@ 
 
 
 http://ekp.kyowon.co.kr/
@@ -36,6 +37,38 @@ http://local.market85.com:8000
 
 http://10.6.7.104:9100/  <-- 퍼블리싱 
 devadm.market85.com   <--admin
+
+----------------------------------------------------------------------
+FO Admin(React) 구동 
+cmd에서 $project=kwop yarn run loc  <-- 윈도우는 이거 되지 않음.
+설정에 들어가서 
+Run/Debug Configurations
+  Scripts : loc
+  Package manager : yarn 
+  Environment : project=kwop 
+
+http://local.i-on.net:3000/account/admin/signin
+admin001 / 1234
+
+
+결제 인증키관련
+C:\dArtagnan\kyowon\관련자료\이지페이 - PG연동\이지페이 - PG연동\테스트인증서
+해당파일을 
+C:\Users\resource\easy\cert 에 복사하면  local에서 테스트 가능함.
+
+
+예상 java 디버그경로.
+C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\java\net\ion\ice\services\ecommerce\orderMng\order\OrderService.java
+
+
+----------------------------------------------------------------------
+
+
+SameSite설정관련
+chrome://flags/
+
+----------------------------------------------------------------------
+
 
 
 URL : https://testpg.easypay.co.kr/webpay/MainAction.do
@@ -207,9 +240,6 @@ element.querySelector('.item_pos_group').classList.add('on');
 Ctrl+P, Ctrl+Q 
 
 
-모바일은 PC랑 소스가 중복으로 될수 있기 때문에 별도의 폴더를 만들어서 clone해줌.
-PS C:\dArtagnan\kyowon\basecampM> git clone -b kwop_dev_mobile http://dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
-
 
 CommunityPostWriteModal
 
@@ -227,7 +257,7 @@ CommunityPostWriteModal
 
 1. File > Project Structure > Project Settings( > Project > Project SDK : java 1.8
 2. File > Settings > File Encodings(검색해서 찾음) > Global Encoding, Project Encoding, Default : UTF-8 로 변경.
-3.BackendCoreApplication > Active profiles: kwop-staloc 기입.
+3.BackendCoreApplication > Active profiles: kwop-staloc 기입. <-- api를 local로 잡기때문에 실제 데이터 sta를 가져오기 위함임.
     풀검색 : application 검색 > application-kwop-staloc.yml에서 ..kwop-staloc
 4. BackendCoreApplication > Shorten command line : classpath file 로 변경
 
@@ -267,11 +297,6 @@ cacheable=false
 
 ------------------------------------------------------------------------------------------------------------
 
-# 소스 커밋 시 체리픽 오류 해셜 방법
-    * 터미널 혹은 커맨드에서 git 명령어로 리셋한다.
-        - ex) $ git reset --hard origin/kwop_prd_pc(리모트명/복원할 git 브랜치명)
-
->git reset --hard origin/kwop_prd_pc
 
 
 
