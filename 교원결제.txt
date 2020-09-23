@@ -1,0 +1,32 @@
+
+1. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\components\kwop\container\pmt\Order.vue
+2. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\components\kwop\presentational\pmt\PaymentInfoBox.vue <--컴포넌트
+3. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\components\kwop\presentational\common\EasypayMulti.vue <--컴포넌트
+3-1. callEasypay() 에서 const requestOrder = `${location.origin}/requestOrder`;
+4. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\pages\requestOrder.vue
+5. import EasypayReq from '@/components/kwop/presentational/common/EasypayReq.vue';
+6.  URL : https://testpg.easypay.co.kr/webpay/MainAction.do
+	EP_mall_id : T0002246
+
+      if (this.data.EP_mall_id) {
+        this.$refs.frm.action = `${this.$$config.pgPcUrl}`;
+        this.$refs.frm.target = '_self';
+        this.$refs.frm.submit();
+      }
+
+
+7. Request URL: https://stgapi.market85.com/svc/orderSheetApi/order  
+	: orderSheetApi.json   > orderSheetSchema.json > "events": "event": "order" 로 콜해서
+               "actionBody": "orderService.order",
+
+    Request URL: https://stgapi.market85.com/svc/orderSheetApi/readComplete?orderGroupId=G20200923162453386&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/menusApi/menus?deviceType=desktop&upperId=root&menuType=desktop&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/communityCategoryApi/categoryTree?upperId=root&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/orderSheetApi/readComplete?orderGroupId=G20200923162453386&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/pageViewApi/log?content=MARKET85&channel=desktop&_siteId=kwop&_deviceType=desktop&_appType=desktop
+
+
+7. 결제 완료 후 
+	http://local.market85.com:9000/orderCompleted?orderGroupId=G20200922102220083
+
+
