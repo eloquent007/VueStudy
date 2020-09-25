@@ -35,7 +35,10 @@ local.i-on.net:9000
 http://local.market85.com:9000/  <--도메인 쿠키문제로 이걸로 봐야함.
 http://local.market85.com:8000
 
-http://10.6.7.104:9100/  <-- 퍼블리싱 
+http://192.168.103.142:9100/    <-- 퍼블리싱 
+Terminal에서 local하나를 추가해서 빌드해서 보면됨.
+
+
 devadm.market85.com   <--admin
 
 ----------------------------------------------------------------------
@@ -306,11 +309,18 @@ cd /home/m85dev/apps/resource/
 tar cvf cache_2019_09_23.tar cache  <--chche 폴더 압축하기
 
 
+--------------------------------------------------------------------------------------
+로그확인법
+
+corelog : 로그보기.
+
+# 실시간 log 보기
+* 환경변수 세팅된 서버: 개발/운영
+-> $ corelog
+* 환경변수 세팅이 안된 서버: 스테이지
+-> $ tail -f ./apps/iceCore/ice.log
 
 
-
-
-
-
-
-
+/home/m85dev/apps/iceCore
+vi ice.log
+:q 
