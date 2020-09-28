@@ -30,3 +30,9 @@
 	http://local.market85.com:9000/orderCompleted?orderGroupId=G20200922102220083
 
 
+---------------------------------------------------------------------------------------------
+API 소스 부분
+
+\kyowon-backend-core\src\main\resources\schema\kwop\orderMng\orderSheet\orderSheetSchema.json
+\kyowon-backend-core\src\main\java\net\ion\ice\services\ecommerce\orderMng\order\OrderService.java
+\kyowon-backend-core\src\main\resources\schema\profiles\kwop-prd\scheduleTask.json

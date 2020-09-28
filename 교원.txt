@@ -324,3 +324,10 @@ corelog : 로그보기.
 /home/m85dev/apps/iceCore
 vi ice.log
 :q 
+
+cd apps/iceCore
+-------------------------------
+접속 
+
+tail -f ./apps/iceCore/ice.log
+
