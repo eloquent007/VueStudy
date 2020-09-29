@@ -1,0 +1,50 @@
+[
+    {
+      "typeId" : "nodeType",
+      "tid" : "testBoard",
+      "parentId" : "root",
+      "repositoryType" : "node",
+      "typeName" : "테스트 게시판",
+      "propertyTypes": [
+        {
+          "pid" : "id",
+          "name" : "글번호",
+          "valueType" : "INT",
+          "idable" : true,
+          "indexable" : true,
+          "labelable" : false,
+          "required" : true,
+          "idType": "autoIncrement",
+          "orderNo" : 10
+        },
+        {
+          "pid" : "title",
+          "name" : "제목",
+          "valueType" : "STRING",
+          "idable" : false,
+          "indexable" : true,
+          "labelable" : true,
+          "required" : true,
+          "orderNo" : 20
+        },
+        {
+          "pid" : "description",
+          "name" : "내용",
+          "valueType" : "TEXT",
+          "idable" : false,
+          "indexable" : true,
+          "labelable" : false,
+          "required" : true,
+          "orderNo" : 21
+        },
+        {
+          "pid": "views",
+          "name": "조회수",
+          "valueType": "INT",
+          "indexable" : true,
+          "defaultValue": "0"
+        }
+      ]
+    }
+  ]
+  

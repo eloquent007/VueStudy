@@ -1,0 +1,16 @@
+ICE 솔루션에서 ICE Core의 핵심 기능 및 역할은 데이터를 관리하며 API를 제공하는 것입니다. 이번 장에서는 데이터 
+모델링(스키마 작성)과 API를 개발하는 부분에 대해 설명하겠습니다.
+일반적인 방식으로 CRUD API를 개발할 경우 DB 테이블을 생성하고 Controller를 만들고 Service와 Dao를 작성하지만 
+ICE로 개발할 경우에는 스키마(NodeType/PropertyType)만 작성하면 자동으로 CRUD API가 생성됩니다.
+ICE에서는 여러가지 스키마를 가지고 있지만 가장 핵심이 되는 스키마는 NodeType과 PropertyType입니다. 
+NodeType과 PropertyType은 DB의 테이블/컬럼 개념과 비슷하기때문에 DB를 예를 들어 설명하겠습니다.
+ICE에서 관리되는 데이터는 Node라고 합니다. DB에서는 관리되는 데이터는 레코드라고 합니다.
+레코드는 속해있는 테이블의 컬럼들의 값을 가지고 있듯히 Node또한 NodeType의 PropertyType 값을 가지고 있습니다.
+예를 들어 게시판이라는 NodeType은 ‘제목’, ‘내용’, ‘작성자’ 등의 ProeprtyType을 가질 수 있습니다. 
+그러면 Node는 ‘제목’, ‘내용’, ‘작성자’에 해당하는 값을 가지게 됩니다.
+
+ICE	            DB
+NodeType	    Table
+PropertyType	Column
+Node	        Record
+
