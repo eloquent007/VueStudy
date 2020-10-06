@@ -1,0 +1,12 @@
+http:/local.market85.com:8080/helper/loadSchema?filePath=C:\dArtagnan\Dev\VueStudy\ICE\testBoardSchema.json
+
+
+
+1. 환경설정 : src/main/resources/application-kwop-loc.yml
+
+    nPay:
+        gwUrl: dev.apis.naver.com
+        gwPort: 80
+        certFile: /Users/resource/npay/cert
+        logDir: /Users/resource/npay/log
+        logLevel: 1

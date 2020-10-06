@@ -1,0 +1,35 @@
+- ICE3 Custom API
+ICE3에서 제공하는 node의 기본 API 기능을 확장한 Custom API를 작성할 수 있도록 제공하며, URL 패턴을 분석하여 제공합니다. 
+보통 API 작성은 Custom API를 말합니다.
+API URL : http://{SERVER_HOST}/{API_TYPE}/{API_CATEGORY}/{API_ID} 
+SERVER HOST : ICE3-CORE의 hostname 또는 {IP}:{PORT}
+API CATEGORY : ICE3 API의 Category ID
+API ID : 호출할 API의 ID (apiId)
+API TYPE : 서비스 대상 구분
+service : 프론트 서비스를 위한 API
+admin : 시스템 관리를 위한 API
+manager : 컨텐츠 관리를 위한 API
+external : 서버대 서버 연동을 위한 API
+internal : 내부 솔루션 연동을 위한 API
+open : 외부 제공 API
+
+
+
+----------------------------------------------------------
+요렇게 나오면 디버그 정상 상태 
+2020-10-06 09:15:13.316 INFO  244947 - [restartedMain] o.s.web.servlet.DispatcherServlet : Completed initialization in 14 ms 
+2020-10-06 09:15:13.325 INFO  244956 - [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '' 
+2020-10-06 09:15:13.332 INFO  244963 - [restartedMain] net.ion.ice.BackendCoreApplication : Started BackendCoreApplication in 244.672 seconds (JVM running for 246.212) 
+
+해당 오류는 무시해도 된다.
+org.springframework.boot.devtools.restart.SilentExitExceptionHandler$SilentExitException
+	at org.springframework.boot.devtools.restart.SilentExitExceptionHandler.exitCurrentThread(SilentExitExceptionHandler.java:90)
+	at org.springframework.boot.devtools.restart.Restarter.immediateRestart(Restarter.java:180)
+	at org.springframework.boot.devtools.restart.Restarter.initialize(Restarter.java:164)
+	at org.springframework.boot.devtools.restart.Restarter.initialize(Restarter.java:554)
+
+
+----------------------------------------------------------
+propertyTypes > virtual  ?
+
+getCountExcelDownloadItem
