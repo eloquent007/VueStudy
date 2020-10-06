@@ -1,0 +1,48 @@
+WI-FI 설정
+kyowoniot_5G / kyowoniot01 <--일반
+KYOWON :kwop38/1qaz2wsx!@ 
+
+------------------------------------------------------------------------------
+Postman 계정
+dts.dev.postman@gmail.com / dkdldhs!DTS
+
+eloquent@naver.com / thillum#$007 (개인계정)
+{{protocol}}://{{hostname}}:{{port}}/node/admin/update.json   <-- /node/admin/ 으로 조회가 됨. 그 이후 수정을 할려면 /update.json 을 넣어주고.
+key 에 id를 넣어주면 이게 프라이머리키가 되고 나머지 변경할 값을 key에 넣어주고 value를 넣어주면 그 value로 값이 변경된다.
+C:\dArtagnan\kyowon-backend-core-kwop_dev_phase2\src\main\resources\schema\core\user\kwop\adminSchema.json
+
+
+------------------------------------------------------------------------------
+
+VPN계정
+kwop25/kyowon@kwop25 <-- 그전 철훈씨가 쓰던거.
+ID / PW / 사용자 : kwop07 / kyowon@kwop07 / 윤여근
+------------------------------------------------------------------------------
+하이탐계정
+kwop07 / 1qaz2wsx!@
+kwop38 / 1qaz2wsx!@
+------------------------------------------------------------------------------
+m85dev / m85@88  <-- 서버 접속 계정 (DEV는 동일)
+corelog : 로그보기.
+
+------------------------------------------------------------------------------
+HI-AUTH.OTP
+패스워드 : 527952
+------------------------------------------------------------------------------
+DBSAFER AGENT
+kwop38 / 1qaz2wsx!@
+------------------------------------------------------------------------------
+http://172.16.30.188:7000/login?from=%2F   젠킨스
+admin/m85admin
+------------------------------------------------------------------------------
+http://ekp.kyowon.co.kr/
+kwop38 / 1qaz2wsx!@
+------------------------------------------------------------------------------
+어드민계정
+
+https://devadm.market85.com:9443/account/admin/SignIn
+https://stgadm.market85.com/account/admin/SignIn
+https://adm.market85.com/account/admin/SignIn
+
+admin001/1234
+------------------------------------------------------------------------------

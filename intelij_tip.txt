@@ -1,0 +1,9 @@
+
+1.Ctrl + Shift+ F  : Find in path  
+    File mask : 체크후 *.json 으로 검색하면 json 파일에서만 검색을 한다.
+
+2. Ctrl + Shift + I : 메소드 모달창 확인. Quick Definition Viewer Ctrl+Shift+I 
+
+3. Shift + Shift : 항목별 검색.
+4. Ctrl + p : 해당메소드로 가기
+5. Ctrl + Q : 

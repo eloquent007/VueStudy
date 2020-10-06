@@ -33,3 +33,11 @@ org.springframework.boot.devtools.restart.SilentExitExceptionHandler$SilentExitE
 propertyTypes > virtual  ?
 
 getCountExcelDownloadItem
+
+
+
+----------------------------------------------------------
+API DB정보 
+src/main/resources/schema/profiles/kwop-sta/dataSource.json  <--SID로 연결
+src/main/resources/schema/profiles/kwop-prd/dataSource.json  <-- 운영차이점은 SERVICE_NAME=COMM 으로 연동이 된다.
+

@@ -1,0 +1,16 @@
+
+많이 사용하는 메소드
+context.getData()
+context.getNode()
+
+-----------------------------------------------------------------------------------
+BO에서  API 찾는 방법.
+http://local.i-on.net:3000/admin/kwop/member/infoMng/memberList
+
+1. core에서 "/admin/kwop/member/infoMng/memberList" 로 full Search
+2. 해당 json파일로 들어감.
+3. BO 화면에 그려지는 text값을   "label" : "탈퇴", 로 검색.
+4. "requestUrl" : "/adm/customerCms/withdraw",  그러면 해당 API를 찾을 수 있다.
+
+0: 어떤API는 BO에서 직접 호출하는것도 있으니 양쪽 확인을 해 봐야 한다.
+-----------------------------------------------------------------------------------
