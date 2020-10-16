@@ -1,0 +1,53 @@
+
+#######   포인트 조회 #################################
+
+1.서비스페이지
+    src/components/kwop/presentational/mpg/MypageTop.vue
+1-1.호출 
+    await this.getKwMemberPoint();    
+
+2.getKwMemberPoint 정의된 부분
+    src/common/repositories/kwop/OrderApi.ts
+
+    async getKwMemberPoint(): Promise<any> {
+        try {
+        const { data } = await this.$fetch({
+            api: {
+            path: API.KW_MEMBER_POINT_INFO.url,  //    url: '/svc/pointApi/kwMemberPointInfo',
+            method: API.KW_MEMBER_POINT_INFO.method,
+            },
+        });
+        return data;
+        } catch (error) {
+        console.error(error);
+        throw error;
+        }
+    }
+
+3. core API로 이벤트가 넘어옴. 
+    3-1. src/main/resources/schema/kwop/pointMng/point/pointAPI.json
+    3-2. "event": "kwMembersPointAPI",
+
+4. kwMembersPointAPI로 full검색해 보면 해당 메소드가 있는 java 파일을 찾을 수 있다. 
+    4-1. src/main/java/net/ion/ice/services/ecommerce/orderMng/point/KwopPointService.java
+    4-2.  public ExecuteContext kwMembersPointAPI(ExecuteContext context) {  <-- 해당 메소드를 디버깅 해보면 됨.
+
+
+--------------------------------------------------
+#######   포인트 사용 #################################
+
+
+1. Request URL: https://stgapi.market85.com/svc/orderSheetApi/order  
+    (src/main/resources/schema/kwop/orderMng/orderSheet/orderSheetApi.json)
+	: orderSheetApi.json   > orderSheetSchema.json > "events": "event": "order" 로 콜해서
+               "actionBody": "orderService.order",
+    1-1 : pointSource : 02=> KW 멤버스 캐시(orderSheetSchema.json)
+2. public void order(ExecuteContext context)  안에 포인트 사용 method 부분 
+    2-1. NodeUtils.getNodeService().executeNodeByEvent(orderData, ORDER_SHEET, "orderComplete", "order");
+    2-2. event 가 orderComplete 니까..orderComplete로 full검색 하면.
+3. src/main/java/net/ion/ice/services/ecommerce/orderMng/orderSheet/KwopOrderSheetService.java
+    해당 class에서 orderComplete 을 찾을 수 있다.
+4.    orderComplete 에서.
+    kwopPointService.order(context);            //포인트 차감
+    해당 차감 method가 실행됨을 확인 할 수 있음.
+

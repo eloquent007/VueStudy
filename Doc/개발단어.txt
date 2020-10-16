@@ -19,6 +19,7 @@ bottleneck :병목지연
 depoly : 배포
 reject : 거부하다.
 dispatch :특별한목적으로 보내다.
+delivery : 배달
 
 CRUD(Create : 생성, Read : 읽기&nbsp;Update : 갱신 Delete : 삭제)
 

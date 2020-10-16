@@ -51,3 +51,9 @@ sessionkey: 0w11F-e-79m4SUgCNNh3ZOGbY9WSZVO-WTizAaHVEy3q.LubqoQmP2Arl15VrZJDrnGq
 _siteId: kwop
 _deviceType: desktop
 _appType: desktop
+
+
+
+----------------------------------------------------------------------------
+리뷰 덧글 재수정 가능한 게시물
+http://local.market85.com:8000/shop/detail?productId=349

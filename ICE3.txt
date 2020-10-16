@@ -6,12 +6,12 @@ SERVER HOST : ICE3-CORE의 hostname 또는 {IP}:{PORT}
 API CATEGORY : ICE3 API의 Category ID
 API ID : 호출할 API의 ID (apiId)
 API TYPE : 서비스 대상 구분
-service : 프론트 서비스를 위한 API
-admin : 시스템 관리를 위한 API
-manager : 컨텐츠 관리를 위한 API
-external : 서버대 서버 연동을 위한 API
-internal : 내부 솔루션 연동을 위한 API
-open : 외부 제공 API
+	service : 프론트 서비스를 위한 API
+	admin : 시스템 관리를 위한 API
+	manager : 컨텐츠 관리를 위한 API
+	external : 서버대 서버 연동을 위한 API
+	internal : 내부 솔루션 연동을 위한 API
+	open : 외부 제공 API
 
 
 

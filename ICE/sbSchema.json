@@ -1,0 +1,55 @@
+[
+    {     
+      "parentId" : "root",
+      "typeId" : "nodeType",
+      "tid" : "sampleBoard",
+      "typeName" : "테스트 게시판",
+      "repositoryType" : "node",
+      "eviction" : 1000,      
+      "propertyTypes": [
+        {
+          "pid" : "sampleBoardSeq",
+          "name" : "샘플 게시판 번호",
+          "valueType" : "INT",
+          "required" : true,
+          "idable" : true,
+          "indexable" : true,
+          "analyzer" : "code" ,
+          "idType": "autoIncrement"
+        },
+        {
+          "pid" : "sampleBoardTitle",
+          "name" : "제목",
+          "valueType" : "STRING",
+          "required" : true,
+          "indexable" : true,
+          "idType": "autoIncrement"
+        },
+        {
+          "pid" : "sampleBoardStDt",
+          "name" : "게시 시작 일자",
+          "valueType" : "DATE",         
+          "indexable" : true         
+        },     
+        {
+          "pid" : "showYn",
+          "name" : "노출 여부",
+          "valueType" : "BOOLEAN",         
+          "indexable" : true         
+        },             
+        {
+          "pid" : "sampleBoardDesc",
+          "name" : "샘플 게시판 내용",
+          "valueType" : "TEXT",
+          "indexable" : true
+        },
+        {
+          "pid": "hitNum",
+          "name": "조회수",
+          "valueType": "INT",
+          "indexable" : true          
+        }
+      ]
+    }
+  ]
+  

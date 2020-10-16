@@ -1,4 +1,8 @@
 
+2020.10.08 vue 전반전으로 정리 잘한듯.
+https://uxgjs.tistory.com/category/WEB%EA%B0%9C%EB%B0%9C%EC%9D%B4%EC%95%BC%EA%B8%B0/Vue.js
+
+
 https://joshua1988.github.io/vue-camp/textbook.html
 
 

@@ -270,3 +270,8 @@ cd apps/iceCore
 
 tail -f ./apps/iceCore/ice.log
 
+
+
+--------------------------------------------------------------------------------------
+모달팝업 호출 관련 참고 페이지.
+src/componentsMobile/kwop/presentational/shop/ProdReview.vue

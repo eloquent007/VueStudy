@@ -14,3 +14,35 @@ http://local.i-on.net:3000/admin/kwop/member/infoMng/memberList
 
 0: 어떤API는 BO에서 직접 호출하는것도 있으니 양쪽 확인을 해 봐야 한다.
 -----------------------------------------------------------------------------------
+
+http://localhost:8080/helper/reloadSchema?filePath=C:\dArtagnan\Dev\VueStudy\ICE\sbSchema.json
+
+http://local.market85.com:8080/helper/reloadSchema?filePath=C:\dArtagnan\Dev\VueStudy\ICE\sbSchema.json
+http://local.i-on.net:8080/helper/reloadSchema?filePath=C:\dArtagnan\Dev\VueStudy\ICE\sbSchema.json
+http://local.i-on.net:8080/helper/reloadSchema/v2?filePath=C:\dArtagnan\Dev\VueStudy\ICE\sbSchema.json
+
+
+
+
+http://localhost:8080/node/nodeType/list.json?tid_matching=sampleBoard&includeReferenced=true
+http://localhost:8080/node/nodeType/list.json?tid_matching=testBoard&includeReferenced=true
+
+
+http://localhost:8080/node/sampleBoard/save.json?sampleBoardTitle=제목테스&sampleBoardStDt=20201007&sampleBoardDesc=테스트테스&showYn=false
+
+
+-----------------------------------------------------------------------------------
+설명필요.
+searchKeyNameResultListSize = NodeQuery.build(typeId)
+        .fromto("created", context.getDataStringValue("created_fromto"))
+        .wildcard("name", context.getDataStringValue("searchValue")).getItemCount();
+searchKeyCustomerIdResultListSize = NodeQuery.build(typeId)
+        .fromto("created", context.getDataStringValue("created_fromto"))
+        .wildcard("customerId", context.getDataStringValue("searchValue")).getItemCount();
+searchKeyIpResultListSize = NodeQuery.build(typeId)
+        .fromto("created", context.getDataStringValue("created_fromto"))
+        .wildcard("ip", context.getDataStringValue("searchValue")).getItemCount();
+-----------------------------------------------------------------------------------
+
+
+.fromto("created", context.getDataStringValue("created_fromto"))
