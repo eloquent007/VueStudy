@@ -1,0 +1,53 @@
+
+1. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\components\kwop\container\pmt\Order.vue
+2. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\components\kwop\presentational\pmt\PaymentInfoBox.vue <--컴포넌트
+3. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\components\kwop\presentational\common\EasypayMulti.vue <--컴포넌트
+3-1. callEasypay() 에서 const requestOrder = `${location.origin}/requestOrder`;
+4. C:\dArtagnan\kyowon\basecamp\kyowon-basecamp\src\pages\requestOrder.vue
+5. import EasypayReq from '@/components/kwop/presentational/common/EasypayReq.vue';
+6.  URL : https://testpg.easypay.co.kr/webpay/MainAction.do
+	EP_mall_id : T0002246
+
+      if (this.data.EP_mall_id) {
+        this.$refs.frm.action = `${this.$$config.pgPcUrl}`;
+        this.$refs.frm.target = '_self';
+        this.$refs.frm.submit();
+      }
+
+
+7. Request URL: https://stgapi.market85.com/svc/orderSheetApi/order  
+	: orderSheetApi.json   > orderSheetSchema.json > "events": "event": "order" 로 콜해서
+               "actionBody": "orderService.order",
+
+    Request URL: https://stgapi.market85.com/svc/orderSheetApi/readComplete?orderGroupId=G20200923162453386&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/menusApi/menus?deviceType=desktop&upperId=root&menuType=desktop&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/communityCategoryApi/categoryTree?upperId=root&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/orderSheetApi/readComplete?orderGroupId=G20200923162453386&_siteId=kwop&_deviceType=desktop&_appType=desktop
+    Request URL: https://stgapi.market85.com/svc/pageViewApi/log?content=MARKET85&channel=desktop&_siteId=kwop&_deviceType=desktop&_appType=desktop
+
+
+7. 결제 완료 후 
+	http://local.market85.com:9000/orderCompleted?orderGroupId=G20200922102220083
+
+
+---------------------------------------------------------------------------------------------
+API 소스 부분
+
+\kyowon-backend-core\src\main\resources\schema\kwop\orderMng\orderSheet\orderSheetSchema.json
+\kyowon-backend-core\src\main\java\net\ion\ice\services\ecommerce\orderMng\order\OrderService.java
+\kyowon-backend-core\src\main\resources\schema\profiles\kwop-prd\scheduleTask.json
+
+
+----------------------------------------------------------------------------
+
+Request URL: http://local.market85.com:8080/svc/orderSheetApi/order?data=
+
+encData: 0cC8pq86q9IHSgUNkD89IHXq6SactjhrNMbOaK2o8qjzIdK-TKtStqXelQjAaUjDDPBLKKnFUCa2ZV2v0jFiJAPZo7q9ccKAC5Z5cmkPsoFdOTVODG7BGamUItmoH6-ACBd-p0PJ7A1mzE.r92zQaWTf7AU3BcS4Z13G.Y8JWQWOtRXnY2rWzKchcD3.GzX27LgdOXy.9FURn2AwaLMJcRlBOqY2mQ6EudD7vQ2tjLlPKnt-qZrzIM.N02-Y0GGjZeXTdPSUYgX1odo0j3WkBlErSNq.A4lOdg9Drv45fDmJNEmkNusko0c7JZNgw9-bJdJn33IK0xXwOq82W58LJ0vDLwbHPsvFub7PRo9kRH.V.fU5DkYi5jdp9sNCcWdqIRfK27VSwsH227URN20niOjF2RZ7W-YJvT1pic-IoglmypxT9mbzGb9GmKks69y4o1cmRtAeA.INbHBY5zB2.NHb-x1on1vOJt0JYshUoit-otgdN3jgD9ymQ1xtLRV4JndlRI06ea.-XH7jisQAH4njgXtTYZL.P3F3clQYHK-QdFxCLBBeZQLf4SQP2IqPI96ZucW-Pe8RqJnaEBwNA.hMwa5FysboViQ-JfbtsBGX7hTSC8mJ1e71kbjCPpFZ4UFGOwUgr-vWnrEWAs7TePVkHpsmgdidS4Rhlne0iyNEI-13F2l.ioqFcZPpv7-shbQ8sKP-oHVOfgXG7JotnzuRanX.UbbiES4-BoeSMyYE4wqwJPaLul9ok4QEQFakvMYMnEo19epWyb98wYKfyYMTg7dGHt0QFkjdTVoVLOuVqcft9KNxEhVglfrYWDbzpiNIFVIjdUCfZm-jyBCVwmjKS91KosHvSTx0GV1GVx7yBbHzXwoU7cuT2BUSyRqNWuSWfqJ6hxaR55.9sieJp5Rt-Dm4uQoRi1YdC9acKqiE_
+customerNo: 100744
+mallId: T0002246
+trCd: 00101000
+traceNo: 20100514550210175575
+sessionkey: 0w11F-e-79m4SUgCNNh3ZOGbY9WSZVO-WTizAaHVEy3q.LubqoQmP2Arl15VrZJDrnGqYY81AinIQ8teRe4MzyI8fZnt6jHKmshq5Iz--MLdf-ZIGIUhHHMBvwB2t-BEKJCi0mDVLjHTmCS2CwQSj.GswLqs.n2MkIGwjOExNErEsZXE..35Z5qN.Cs4XLeFunOuGsXgT
+_siteId: kwop
+_deviceType: desktop
+_appType: desktop
