@@ -1,0 +1,196 @@
+[
+  {
+    "typeId": "nodeType",
+    "tid": "hiddenLink",
+    "typeName": "히든링크",
+    "repositoryType": "data",
+    "datasource": "productDb",
+    "tableName": "hiddenLink",
+    "propertyTypes": [
+      {
+        "pid": "hiddenLinkNo",
+        "name": "히든링크번호",
+        "valueType": "LONG",
+        "required": true,
+        "idable": true,
+        "labelable": false,
+        "treeable": false,
+        "indexable": true,
+        "analyzer": "simple",
+        "idType": "autoIncrement",
+        "orderNo": 10
+      },
+      {
+        "pid": "hiddenLinkName",
+        "name": "히든링크명",
+        "valueType": "STRING",
+        "required": true,
+        "idable": false,
+        "labelable": true,
+        "treeable": false,
+        "indexable": true,
+        "orderNo": 20
+      },
+      {
+        "pid": "useYn",
+        "name": "사용여부",
+        "valueType": "BOOLEAN",
+        "required": false,
+        "idable": false,
+        "labelable": false,
+        "treeable": false,
+        "indexable": true,
+        "defaultValue": "true",
+        "orderNo": 30
+      },
+      {
+        "pid": "deleteYn",
+        "name": "처리여부",
+        "valueType": "BOOLEAN",
+        "required": false,
+        "idable": false,
+        "labelable": false,
+        "treeable": false,
+        "indexable": true,
+        "defaultValue": "false",
+        "orderNo": 40
+      },
+      {
+        "pid": "startTime",
+        "name": "시작날짜시간",
+        "valueType": "DATETIME",
+        "required": true,
+        "idable": false,
+        "labelable": false,
+        "treeable": false,
+        "indexable": true,
+        "orderNo": 50
+      },
+      {
+        "pid": "endTime",
+        "name": "종료날짜시간",
+        "valueType": "DATETIME",
+        "required": true,
+        "idable": false,
+        "labelable": false,
+        "treeable": false,
+        "indexable": true,
+        "orderNo": 60
+      },
+      {
+        "pid": "products",
+        "name": "대상 상품들",
+        "valueType": "REFERENCES",
+        "required": false,
+        "idable": false,
+        "labelable": false,
+        "treeable": false,
+        "indexable": false,
+        "analyzer": "code",
+        "referenceType": "product",
+        "referenceValue": "productId",
+        "filter": "",
+        "defaultValue": "",
+        "orderNo": 70
+      },
+      {
+        "pid": "customers",
+        "name": "대상 고객들",
+        "valueType": "REFERENCES",
+        "required": false,
+        "idable": false,
+        "labelable": false,
+        "treeable": false,
+        "indexable": true,
+        "analyzer": "code",
+        "referenceType": "customer",
+        "referenceValue": "",
+        "filter": "",
+        "defaultValue": "",
+        "orderNo": 80
+      },
+      {
+        "pid": "owner",
+        "name": "등록자",
+        "valueType": "REFERENCE",
+        "required": false,
+        "indexable": true,
+        "analyzer": "code",
+        "referenceType": "user",
+        "orderNo": 90
+      },
+      {
+        "pid": "created",
+        "name": "등록일시",
+        "valueType": "DATE",
+        "required": false,
+        "indexable": true,
+        "analyzer": "simple",
+        "orderNo": 100
+      },
+      {
+        "pid": "modifier",
+        "name": "수정자",
+        "valueType": "REFERENCE",
+        "required": false,
+        "indexable": true,
+        "analyzer": "code",
+        "referenceType": "user",
+        "orderNo": 110
+      },
+      {
+        "pid": "changed",
+        "name": "수정일시",
+        "valueType": "DATE",
+        "required": false,
+        "indexable": true,
+        "analyzer": "simple",
+        "orderNo": 120
+      }
+    ],
+    "events": [
+      {
+        "event": "admDelete",
+        "name": "(어드민) 다중 삭제",
+        "eventActions": [
+          {
+            "action": "admDelete",
+            "actionName": "(어드민) 다중 삭제",
+            "actionType": "service",
+            "actionBody": "kwopHiddenLinkService.admDelete",
+            "orderNo": 10
+          }
+        ]
+      },
+      {
+        "_event": "delete",
+        "event": "admList",
+        "name": "(어드민)목록조회",
+        "noneExecute": true,
+        "eventActions": [
+          {
+            "action": "admList",
+            "actionName": "(어드민)목록조회",
+            "actionType": "service",
+            "actionBody": "kwopHiddenLinkService.admList",
+            "orderNo": 10
+          }
+        ]
+      },
+      {
+        "event": "checkHiddenLink",
+        "name": "히든링크 상품 상세조회",
+        "noneExecute": true,
+        "eventActions": [
+          {
+            "action": "checkHiddenLink",
+            "actionName": "히든링크 상품 상세조회",
+            "actionType": "service",
+            "actionBody": "kwopHiddenLinkService.checkHiddenLink",
+            "orderNo": 10
+          }
+        ]
+      }
+    ]
+  }
+]
