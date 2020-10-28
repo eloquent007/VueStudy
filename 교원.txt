@@ -275,3 +275,16 @@ tail -f ./apps/iceCore/ice.log
 --------------------------------------------------------------------------------------
 모달팝업 호출 관련 참고 페이지.
 src/componentsMobile/kwop/presentational/shop/ProdReview.vue
+
+
+--------------------------------------------------------------------------------------
+{{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core
+{{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=kwop
+{{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=page  : BO
+
+
+
+회원가입후 부가정보 입력에 스크롤 보이지  않음.
+부가입력 성별 alert 모달창 뒤에 뜸..확인 필요.
+
+https://devapi.market85.com:9443/svc/pointApi/kwMemberPointInfo?_siteId=kwop&_deviceType=desktop&_appType=desktop

@@ -18,3 +18,20 @@ git clone -b kwop_sta_phase2 http://dcsf-dev08.i-on.net/dts/kyowon-front-builder
 
 
 
+-------------------------------------------------------------------------------------
+
+커밋방법
+1. Project 최상단 > 마우스오른쪽 > Git>Repository > Push
+2. Git Branches 에서 stg로 변경 > Update
+3. Git Log에서 Branch:origin/.. dev선택 후 dev에서 commit되어 push된 로그를 확인
+4. 해당 항목에서 마우스 오른족 Cherry-Pick 해서 stg에 똑같이 동기화를 한다.
+5. Push 하여 마무리.
+
+
+커밋방법 변경 (2020.10.274) 
+1. Branches  : kwop_dev_mobile 에서 작업.
+2. 작업한 내역 commit 
+3. Branches  : kwop_sta_mobile 로 변경
+4. 메뉴 VCS > Git > Merge Changes  로 dev소스의 commit 된 항목을 sta에  merge 한다.
+5. push로 stg에 소스 적용 완료.
+6. 젠킨스 배포

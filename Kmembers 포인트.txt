@@ -53,3 +53,38 @@
 
 5. Kmembers poinst 사용 api 
     String resultCode = useKwMembersPoint(orderId, authorizationCI, customerId, pointSource, totalUsedPoint.toString(), productName);
+
+
+
+
+케이멤버스 주소 : http://dev.kwmembers.com/
+
+id : market85test
+pass : 1q2w3e4r! 입니다
+
+
+33835 / 박현우12!
+
+===============================================================================================
+수정사항
+src/main/java/net/ion/ice/services/ecommerce/orderMng/CommonOrder.java
+
+    public static String getPayMethodDisplay(String orderId) {
+        List<String> payMethodDisplay = new ArrayList<>();
+//        Node orderSheet = (Node) CommonOrder.getNodeQueryNode(NodeQuery.build("orderSheet").equals("orderId", orderId));
+        Node orderSheet = NodeUtils.getNode("orderSheet", orderId);
+        Code payMethod = orderSheet.getCodeValue("payMethod");
+        BigDecimal point = orderSheet.getBigDecimalValue("totalUsedPoint");
+        Code pointSource = orderSheet.getCodeValue("pointSource");
+
+        if (point.compareTo(BigDecimal.ZERO) > 0) {
+            if ("99".equals(payMethod)) {
+                payMethodDisplay.add("포인트");
+            }else{
+                if (pointSource.equals("01")) {
+                    payMethodDisplay.add("포인트");
+                } else {
+                    payMethodDisplay.add("캐시");
+                }
+            }
+        }
