@@ -62,6 +62,14 @@
 id : market85test
 pass : 1q2w3e4r! 입니다
 
+마켓85 스테이지
+id : testuser101
+pass : 박현우12!
+
+
+
+malldev14 / aaaa1111!
+
 
 33835 / 박현우12!
 
@@ -78,7 +86,7 @@ src/main/java/net/ion/ice/services/ecommerce/orderMng/CommonOrder.java
         Code pointSource = orderSheet.getCodeValue("pointSource");
 
         if (point.compareTo(BigDecimal.ZERO) > 0) {
-            if ("99".equals(payMethod)) {
+            if (payMethod.equals("99")) {
                 payMethodDisplay.add("포인트");
             }else{
                 if (pointSource.equals("01")) {
@@ -87,4 +95,38 @@ src/main/java/net/ion/ice/services/ecommerce/orderMng/CommonOrder.java
                     payMethodDisplay.add("캐시");
                 }
             }
+        }
+
+
+
+----------------------------------------------------------------------------------
+        if (point.compareTo(BigDecimal.ZERO) > 0) {
+            if (payMethod.equals("99")) {
+                payMethodDisplay.add("포인트");
+            }else if (payMethod.equals("100")){
+                if (pointSource.equals("01")) {
+                    payMethodDisplay.add("포인트");
+                } else {
+                    payMethodDisplay.add("캐시");
+                }
+        }
+        if (!payMethod.equals("100")) {
+            payMethodDisplay.add(payMethod.getLabel().toString());
+        }
+
+----------------------------------------------------------------------------------
+최종 적용소스
+
+        if (point.compareTo(BigDecimal.ZERO) > 0) {
+            if (pointSource.equals("02")) {
+                payMethodDisplay.add("캐시");
+            }else {
+                payMethodDisplay.add("포인트");
+            }
+        }
+//        if (!"100".equals(payMethod)) {
+//            payMethodDisplay.add(payMethod.getLabel().toString());
+//        }
+        if (!payMethod.equals("100")) {
+            payMethodDisplay.add(payMethod.getLabel().toString());
         }

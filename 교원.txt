@@ -288,3 +288,15 @@ src/componentsMobile/kwop/presentational/shop/ProdReview.vue
 부가입력 성별 alert 모달창 뒤에 뜸..확인 필요.
 
 https://devapi.market85.com:9443/svc/pointApi/kwMemberPointInfo?_siteId=kwop&_deviceType=desktop&_appType=desktop
+
+
+
+
+  setPayMethodDisplay(data: string) {
+    this.payMethodDisplay = data;
+  }
+
+  setPayMethod(data: string) {
+    this.payMethod = data;
+  }
+

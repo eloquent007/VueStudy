@@ -1,0 +1,40 @@
+
+
+조회하기
+1. {{protocol}}://{{hostname}}:{{port}}/node/termsAgree/34173
+    : 34173 값이 termsAgree 테이블의 primary key값이 된다.
+
+
+    src/main/resources/schema/kwop/customerMng/termsAgree/termsAgreeSchema.json
+    "propertyTypes": [
+        {
+            "pid": "termsAgreeNo",
+            "name": "약관동의번호",
+            "valueType": "INT",
+            "required": true,
+            "idable": true,   <-- 이게 primary key
+            "labelable": false,
+            "treeable": false,
+            "indexable": true, 
+            "analyzer": "code",
+            "referenceType": "",
+            "referenceValue": "",
+            "defaultValue": "",
+            "idType": "autoIncrement", <--자동증가.
+            "orderNo": 10
+        },
+
+
+2.수정하기.(Postman > Basic > 노드데이터>데이터 수정)  : Params  Body에 체크되어 있는거 확인 후 확인 바람.
+    2-1. {{protocol}}://{{hostname}}:{{port}}/adm/termsAgree/update  <-- api 이용 수정하기
+    2-2. {{protocol}}://{{hostname}}:{{port}}/node/termsAgree/update.json <-- node 직접 수정하기
+    # termsAgree 가 수정할 테이블이기 때문에 postman 기본 테이블에서 수정해 주어야 한다.
+
+
+    key  value를 넣어 주어야 하는데.
+    id값에 propertyTypes idable이 true 인 pid가 id 값임. 
+    
+    key         : value 
+    id          : 34173
+    termsAgreeYn : false 
+
