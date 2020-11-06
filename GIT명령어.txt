@@ -10,6 +10,11 @@ git clone -b kwop_sta_phase2 http://dcsf-dev08.i-on.net/dts/kyowon-front-builder
 
 
 
+
+git clone -b features/kwop_npay http://dcsf-dev08.i-on.net/dts/kyowon-backend-core.git
+
+
+
 # 소스 커밋 시 체리픽 오류 해셜 방법
     * 터미널 혹은 커맨드에서 git 명령어로 리셋한다.
         - ex) $ git reset --hard origin/kwop_prd_pc(리모트명/복원할 git 브랜치명)

@@ -202,6 +202,11 @@ CommunityPostWriteModal
     (Editor > File Encodings )
 3.BackendCoreApplication > Active profiles: kwop-staloc 기입. <-- api를 local로 잡기때문에 실제 데이터 sta를 가져오기 위함임.
     풀검색 : application 검색 > application-kwop-staloc.yml에서 ..kwop-staloc
+
+  2020.11.06  dev는 dev 별도로 사용하기로 stg랑 데이터가 틀린 문제가 있기에...
+  kwop-devloc 으로 설정.
+  C:\Users\resource\kwopdev  <-- resource dev 전용 별도 생성.
+
 4. BackendCoreApplication > Shorten command line : classpath file 로 변경
 
 
