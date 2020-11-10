@@ -33,10 +33,36 @@ git clone -b features/kwop_npay http://dcsf-dev08.i-on.net/dts/kyowon-backend-co
 5. Push 하여 마무리.
 
 
-커밋방법 변경 (2020.10.274) 
+커밋방법 변경 (2020.10.27) 
 1. Branches  : kwop_dev_mobile 에서 작업.
 2. 작업한 내역 commit 
 3. Branches  : kwop_sta_mobile 로 변경
 4. 메뉴 VCS > Git > Merge Changes  로 dev소스의 commit 된 항목을 sta에  merge 한다.
 5. push로 stg에 소스 적용 완료.
 6. 젠킨스 배포
+
+
+커밋방법 변경 (2020.11.10) 
+1. Branches  : 운영소스를 기반으로 개인 Branch 생성.
+2. 작업한 내역 commit 
+3. Branches  : kwop_sta_mobile 로 변경
+4. Cherry-Pick 로 소스 적용하고 commit 
+5. kwop_prd_phase2로 Checkout 
+4. 메뉴 VCS > Git > Merge Changes > Merge할 Brance선택(개인작업한 Brance선택 )
+5. push로 stg에 소스 적용 완료.
+6. 젠킨스 배포
+
+
+
+
+------------------------------------------------------------------------------------
+2020.11.10 
+GIT 오류
+Repository URL : http://dts-jenkins:dts-jenkins@dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
+Failed to connect to repository : Command "git ls-remote -h http://dts-jenkins:dts-jenkins@dcsf-dev08.i-on.net/dts/kyowon-basecamp.git HEAD" returned status code 128:
+stdout:
+stderr: fatal: Authentication failed for 'http://dts-jenkins:dts-jenkins@dcsf-dev08.i-on.net/dts/kyowon-basecamp.git/'
+
+
+git@dcsf-dev08.i-on.net:dts/kyowon-basecamp.git
+http://dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
