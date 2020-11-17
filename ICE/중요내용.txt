@@ -17,3 +17,10 @@ Node	        Record
 ---------------------------------------------------------------------------------------------------------------
 주문관련
 src/main/java/net/ion/ice/services/ecommerce/orderMng/CommonOrder.java
+
+---------------------------------------------------------------------------------------------------------------
+Configurations 에 Active profiles : kwop-staloc 로 설정하면.
+1. src/main/resources/application-kwop-staloc.yml  해당 파일 설정으로 디버그됨.
+2. ~.yml 파일에 보면  cache-path: /Users/resource/kwopsta/cache  로 구동됨을 확인 할 수 있다.
+
+
