@@ -1,0 +1,19 @@
+select count(*),AUTHORIZATIONCI  from CUSTOMER
+where  CUSTOMERSTATUS <>'leave'
+group by AUTHORIZATIONCI
+having  count(*) > 1
+order by count(*) desc ;
+
+select * from  CUSTOMER where
+         AUTHORIZATIONCI='kHgIz35CmE27leyriwFGh/JCRHsLjsXCJFd4MOiORgdOkEeKNbErSBNgP4eR12QMJyxGyLDX5MEY4YLeBbrmRQ=='
+ and CUSTOMERSTATUS <>'leave' ;
+;
+
+select * from  CUSTOMER where
+        CUSTOMERSTATUS <>'leave' and  AUTHORIZATIONCI is null;
+
+
+AUTHORIZATIONCI 가 null 인 회원 481명.
+
+
+
