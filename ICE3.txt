@@ -41,3 +41,14 @@ API DB정보
 src/main/resources/schema/profiles/kwop-sta/dataSource.json  <--SID로 연결
 src/main/resources/schema/profiles/kwop-prd/dataSource.json  <-- 운영차이점은 SERVICE_NAME=COMM 으로 연동이 된다.
 
+--------------------------------------------------------------------------------------------------------------------
+
+API 조회 방법
+
+{{protocol}}://{{hostname}}:{{port}}/node/api?id_matching=productApi>list
+{{protocol}}://{{hostname}}:{{port}}/node/apiConfig?id_matching=338046087
+{{protocol}}://{{hostname}}:{{port}}/node/apiQuery?id_matching=160541883
+{{protocol}}://{{hostname}}:{{port}}/node/apiQuery   post 방식으로
+id=
+value=
+
