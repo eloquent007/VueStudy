@@ -1,0 +1,73 @@
+ select f.*                            
+ from (                  select ROWNUM r, t.*                  
+ from (                           
+     select ct.*                           
+     from (                                    
+         select a.*,                                           
+         regexp_substr(a.CATEGORYID, '[^,]+', 1, 1) categoryA,                                           
+         regexp_substr(a.CATEGORYID, '[^,]+', 1, 2) categoryB,                                           
+         regexp_substr(a.CATEGORYID, '[^,]+', 1, 3) categoryC                                    
+         from COUPONTYPE a                                    
+         where 1 = 1                                      
+         and USEYN = 1                                      
+         and ISSUETYPE = 'download'                                      
+         and sysdate between ISSUESTARTDATE and ISSUEENDDATE                                      
+         and sysdate between USAGESTARTDATE and USAGEENDDATE                                                                       
+         ) ct                           
+         where 1 = 1                               
+         and (select count(*) from COUPON where COUPONTYPENO = ct.COUPONTYPENO) < ct.issueCount                                                                     
+         and (USETARGETTYPE = 'all'                                                                               
+         or (USETARGETTYPE = 'category'                                                                                       
+         and ((categoryA is not null and categoryA = ?) or categoryA is null)                                                                                                                                 and ((categoryB is not null and categoryB = ?) or categoryB is null)                                                                                                                                 and ((categoryC is not null and categoryC = ?) or categoryC is null)                                                                                   )                                                                                                                     or (USETARGETTYPE = 'brand' and BRANDID like '%' || ? || '%')                                                                                                                     or (USETARGETTYPE = 'product' and COUPONTYPENO in (select COUPONTYPENO                                                                                                     from COUPONTYPEPRODUCTMAP                                                                                                     where COUPONTYPENO = ct.COUPONTYPENO                                                                                                         and PRODUCTID = ?))                                                                           )                                                               order by USAGEENDDATE desc,                                    COUPONTYPENO desc                       ) t                  ) f
+
+### Cause: java.sql.SQLException: Connection is null.
+; uncategorized SQLException; SQL state [null]; error code [0]; Connection is null.; nested exception is java.sql.SQLException: Connection is null.
+org.springframework.jdbc.UncategorizedSQLException:
+### Error querying database.  Cause: java.sql.SQLException: Connection is null.
+### The error may exist in file [/home/m85dev/apps/iceCore/war/WEB-INF/classes/mybatis/coupon.xml]
+### The error may involve net.ion.ice.mapper.CouponMapper.downloadable
+### The error occurred while executing a query
+### SQL: select f.*                            from (                  select ROWNUM r, t.*                  from (                           select ct.*                           from (                                    select a.*,                                           regexp_substr(a.CATEGORYID, '[^,]+', 1, 1) categoryA,                                           regexp_substr(a.CATEGORYID, '[^,]+', 1, 2) categoryB,                                           regexp_substr(a.CATEGORYID, '[^,]+', 1, 3) categoryC                                    from COUPONTYPE a                                    where 1 = 1                                      and USEYN = 1                                      and ISSUETYPE = 'download'                                      and sysdate between ISSUESTARTDATE and ISSUEENDDATE                                      and sysdate between USAGESTARTDATE and USAGEENDDATE                                                                       ) ct                           where 1 = 1                               and (select count(*) from COUPON where COUPONTYPENO = ct.COUPONTYPENO) < ct.issueCount                                                                     and (USETARGETTYPE = 'all'                                                                               or (USETARGETTYPE = 'category'                                                                                       and ((categoryA is not null and categoryA = ?) or categoryA is null)                                                                                                                                 and ((categoryB is not null and categoryB = ?) or categoryB is null)                                                                                                                                 and ((categoryC is not null and categoryC = ?) or categoryC is null)                                                                                   )                                                                                                                     or (USETARGETTYPE = 'brand' and BRANDID like '%' || ? || '%')                                                                                                                     or (USETARGETTYPE = 'product' and COUPONTYPENO in (select COUPONTYPENO                                                                                                     from COUPONTYPEPRODUCTMAP                                                                                                     where COUPONTYPENO = ct.COUPONTYPENO                                                                                                         and PRODUCTID = ?))                                                                           )                                                               order by USAGEENDDATE desc,                                    COUPONTYPENO desc                       ) t                  ) f
+### Cause: java.sql.SQLException: Connection is null.
+; uncategorized SQLException; SQL state [null]; error code [0]; Connection is null.; nested exception is java.sql.SQLException: Connection is null.
+        at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+        at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+        at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+        at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+        at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+        at com.sun.proxy.$Proxy164.selectList(Unknown Source)
+        at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+        at net.ion.ice.services.ecommerce.orderMng.coupon.KwopCouponService.getDownloadableCouponList(KwopCouponService.java:227)
+        at net.ion.ice.core.context.response.kwop.KwopProductReadResponse.getMaxBenefitText(KwopProductReadResponse.java:114)
+        at net.ion.ice.core.context.response.kwop.KwopProductReadResponse.execute(KwopProductReadResponse.java:51)
+        at net.ion.ice.core.context.QueryContext.makeQueryResult(QueryContext.java:896)
+        at net.ion.ice.core.context.QueryContext.makeQueryResult(QueryContext.java:852)
+        at net.ion.ice.core.node.NodeService.getQueryResult(NodeService.java:592)
+        at net.ion.ice.core.node.NodeController.query(NodeController.java:407)
+        at net.ion.ice.core.node.NodeController.queryeRest(NodeController.java:399)
+        at sun.reflect.GeneratedMethodAccessor166.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+        at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+        at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+        at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+------------------------------------------------------------
+
+2020-11-24 19:14:47.846 ERROR 80488677 - [http-nio-8080-exec-1] n.i.i.c.c.r.k.KwopProductReadResponse : Product Detail Coupon Error :
+### Error querying database.  Cause: java.sql.SQLException: Connection is null.
+### The error may exist in file [/home/m85dev/apps/iceCore/war/WEB-INF/classes/mybatis/coupon.xml]
+### The error may involve net.ion.ice.mapper.CouponMapper.downloadable
+### The error occurred while executing a query
+### SQL: select f.*                            from (                  select ROWNUM r, t.*                  from (                           select ct.*                           from (                                    select a.*,                                           regexp_substr(a.CATEGORYID, '[^,]+', 1, 1) categoryA,                                           regexp_substr(a.CATEGORYID, '[^,]+', 1, 2) categoryB,                                           regexp_substr(a.CATEGORYID, '[^,]+', 1, 3) categoryC                                    from COUPONTYPE a                                    where 1 = 1                                      and USEYN = 1                                      and ISSUETYPE = 'download'                                      and sysdate between ISSUESTARTDATE and ISSUEENDDATE                                      and sysdate between USAGESTARTDATE and USAGEENDDATE                                                                       ) ct                           where 1 = 1                               and (select count(*) from COUPON where COUPONTYPENO = ct.COUPONTYPENO) < ct.issueCount                                                                     and (USETARGETTYPE = 'all'                                                                               or (USETARGETTYPE = 'category'                                                                                       and ((categoryA is not null and categoryA = ?) or categoryA is null)                                                                                                                                 and ((categoryB is not null and categoryB = ?) or categoryB is null)                                                                                                                                 and ((categoryC is not null and categoryC = ?) or categoryC is null)                                                                                   )                                                                                                                     or (USETARGETTYPE = 'brand' and BRANDID like '%' || ? || '%')                                                                                                                     or (USETARGETTYPE = 'product' and COUPONTYPENO in (select COUPONTYPENO                                                                                                     from COUPONTYPEPRODUCTMAP                                                                                                     where COUPONTYPENO = ct.COUPONTYPENO                                                                                                         and PRODUCTID = ?))                                                                           )                                                               order by USAGEENDDATE desc,                                    COUPONTYPENO desc                       ) t                  ) f
+### Cause: java.sql.SQLException: Connection is null.
+; uncategorized SQLException; SQL state [null]; error code [0]; Connection is null.; nested exception is java.sql.SQLException: Connection is null.
+org.springframework.jdbc.UncategorizedSQLException:
+### Error querying database.  Cause: java.sql.SQLException: Connection is null.
+### The error may exist in file [/home/m85dev/apps/iceCore/war/WEB-INF/classes/mybatis/coupon.xml]
+### The error may involve net.ion.ice.mapper.CouponMapper.downloadable
+### The error occurred while executing a query
+
