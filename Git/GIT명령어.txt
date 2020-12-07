@@ -68,3 +68,13 @@ git@dcsf-dev08.i-on.net:dts/kyowon-basecamp.git
 http://dcsf-dev08.i-on.net/dts/kyowon-basecamp.git
 
 
+
+------------------------------------------------------------------------------------
+특정 Branches 를 스테이징에 어디까지 적용했는지 모를경우 Cherry-Pick 으로 하기엔 여러가지로 문제가 있다.
+이럴경우엔 
+
+ 1. Branches 를 kwop_sta_pc 로 잡고.
+ 2. 변경해야될 소스파일 tab에서 마우스 오른쪽 클릭.
+ 3. Git > Compare with Branch
+ 4. select Branche to Compare  <-- 
+

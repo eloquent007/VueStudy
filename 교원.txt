@@ -235,7 +235,7 @@ C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\resources\schema\kw
 1. API검색 : {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=bestProductApi>bestList
     : config의 id를 조회하기 위함이다.
 
-2. API Config 확인 :{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/1037642594
+2. API Config 확인 :{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/1037642594  863216329
    : 1에서 조회한 id값으로 조회를 한다.
 
 3. 2에서 조회한 결과에서 설정변경할 값을 key에 value로 세팅한 후 변경한다.
@@ -261,6 +261,9 @@ tar cvf cache_dev_2020_11_10.tar cache
 
 
 
+------------------------------------------------------------------------------------------------------------
+API 수정 작업시 데이터가 cache 데이터라면 어드민도 로컬에서 빌드해서 봐야 cache 정보 수정등 값이 확인이 된다.
+BO 를 로컬에서 켜서보지 않으면 cashe 데이터도 로컬이 아닌 stg를 보기 때문에 변경된 값 확인이 불가 하다.
 
 
 

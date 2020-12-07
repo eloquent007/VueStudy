@@ -2,12 +2,13 @@
 ********* kyowon-basecamp  PC 기준  *********
 ==============================================================================================
 0. REMOTES에서 Checkout 해서 BRANCHES에 생성.(초기에만 해주기때문에 다음 branch생성할땐 할필요없음)
-1. kwop_prd_pc 로 dArtagnan/pc/NewJob branch 생성. -> push to origin 
+1. kwop_prd_pc 로 dArtagnan/pc/NewJob branch 생성. -> push to origin
 2. NewJob branch 에서 작업진행 완료.
 3. kwop_sta_pc 에 Cherry-Pick 하고, JenKins stg 배포하고  검수 요청함.
-4. 운영 반영전 kwop_stg_pc_master 에 역 Merge 함.
-5. kwop_stg_pc_master -> kwop_prd_pc 에 Merge 에서 배포 요청함.(개인브런치말고 kwop_stg_pc_master로 merge함)
-6. 운영적용 이후 dArtagnan/pc/NewJob branch 삭제.
+4. Git>Fetch 운영 반영전 kwop_stg_pc_master 에 역 Merge 함. (Git -> Merge change)
+5. kwop_stg_pc_master 에 작업한거 merge함.(VCS-> Git -> Merge change ->(작업한 branch 선택) )
+6. kwop_prd_pc -> kwop_stg_pc_master 에 Merge 에서 배포 요청함.(개인브런치말고 kwop_stg_pc_master로 merge함)
+7. 운영적용 이후 dArtagnan/pc/NewJob branch 삭제.
 
 
 ==============================================================================================
@@ -17,18 +18,20 @@
 1. kwop_prd_phase2 로 dArtagnan/mo/NewJob branch 생성. > push to origin  (페이스 단계)
 2. NewJob branch 에서 작업진행 완료.
 3. kwop_sta_mo 에 Cherry-Pick 하고, JenKins stg 배포하고  검수 요청함.
-4. 운영 반영전 kwop_stg_mobile_master 에 역 Merge 함.
-5. kwop_stg_mobile_master -> kwop_prd_phase2 에 Merge 에서 배포 요청함.(개인브런치말고 kwop_stg_mobile_master 로 merge함)
-6. 운영적용 이후 dArtagnan/mo/NewJob branch 삭제.
+4. Git>Fetch 운영 반영전 kwop_stg_mobile_master 에 역 Merge 함. (Git -> Merge change)
+5. kwop_stg_mobile_master 에 작업한거 merge함.(VCS-> Git -> Merge change ->(작업한 branch 선택) )
+6. kwop_prd_phase2 -> kwop_stg_mobile_master  에 Merge 에서 배포 요청함.(개인브런치말고 kwop_stg_mobile_master 로 merge함)
+7. 운영적용 이후 dArtagnan/mo/NewJob branch 삭제.
 
 
 ==============================================================================================
 ********* kyowon-backend-core 기준  *********
 ==============================================================================================
 0. REMOTES에서 Checkout 해서 BRANCHES에 생성.(초기에만 해주기때문에 다음 branch생성할땐 할필요없음)
-1. kwop_prd_phase2 로 dArtagnan/NewJob branch 생성. > push to origin  
+1. kwop_prd_phase2 로 dArtagnan/NewJob branch 생성. > push to origin
 2. NewJob branch 에서 작업진행 완료.
 3. kwop_sta_phase2 에 Cherry-Pick 하고, JenKins stg 배포하고  검수 요청함.
-4. 운영 반영전 kwop_stg_master 에 역 Merge 함.
-5. kwop_stg_master -> kwop_prd_phase2 에 Merge 에서 배포 요청함.(개인브런치말고 kwop_stg_master 로 merge함)
-6. 운영적용 이후 dArtagnan/NewJob branch 삭제.
+4. 운영 반영전 kwop_stg_master 에 역 Merge 함.(VCS-> Git -> Merge change ->(선택branch) kwop_prd_phase2(역Merge할게 없으면 목록에서 나오지 않음)
+5. kwop_stg_master 에 작업한거 merge함.(VCS-> Git -> Merge change ->(작업한 branch 선택) )
+6. kwop_prd_phase2 -> kwop_stg_master 에 Merge 에서 배포 요청함.(개인브런치말고 kwop_stg_master 로 merge함)
+7. 운영적용 이후 dArtagnan/NewJob branch 삭제.
