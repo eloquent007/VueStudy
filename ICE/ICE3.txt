@@ -42,6 +42,40 @@ src/main/resources/schema/profiles/kwop-sta/dataSource.json  <--SID로 연결
 src/main/resources/schema/profiles/kwop-prd/dataSource.json  <-- 운영차이점은 SERVICE_NAME=COMM 으로 연동이 된다.
 
 --------------------------------------------------------------------------------------------------------------------
+C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\resources\schema\kwop\displayMng\bestProduct\api.json
+
+"method": "matching",  DB조건 and
+"method": "matchingShould", DB조건 or 
+"method": "fromto",  DB조건 between 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+{{protocol}}://{{hostname}}:{{port}}/node/api/bestProductApi>bestList  확인.
+
+{{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/displayMng/bestProduct/api.json  로드스키마
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+1. API검색 : {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=bestProductApi>bestList
+    : config의 id를 조회하기 위함이다.
+
+2. API Config 확인 :{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/1037642594  863216329
+   : 1에서 조회한 id값으로 조회를 한다.
+
+3. 2에서 조회한 결과에서 설정변경할 값을 key에 value로 세팅한 후 변경한다.
+{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/update.json
+id=863216329
+cacheable=false
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
 API 조회 방법
 Q : 판매종료상품 말고 전부 화면에 보여주기로 수정.
 

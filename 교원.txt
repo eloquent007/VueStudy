@@ -1,12 +1,8 @@
-
-
 tester123 / 12345qwert
 tester123 / 박현우12!
 ---------------------------------------------------------
 Digital eXperience Platform(이하 DXP)
 
-
-http://ekp.kyowon.co.kr/
 
 
 slack
@@ -23,16 +19,12 @@ prd.config.ts 에서 pcHost만 'local.market85.com:9000' 으로 변경후
 yarn 2 pc:prd 로 하면 api는 실데이터를 가져와서 디버깅 가능함.
 
 
-
-local.i-on.net:9000
-http://local.market85.com:9000/  <--도메인 쿠키문제로 이걸로 봐야함.
+http://local.market85.com:9000/ 
 http://local.market85.com:8000
 
 http://192.168.103.142:9100/    <-- 퍼블리싱 
 Terminal에서 local하나를 추가해서 빌드해서 보면됨.
 
-
-devadm.market85.com   <--admin
 
 ----------------------------------------------------------------------
 FO Admin(React) 구동 
@@ -79,8 +71,6 @@ dev.config.ts
 
 
 
-로그인계정 : testking /1234
-
 결함관리
 https://docs.google.com/spreadsheets/d/1BMVPpf2mQGBOGs-Ka4-Fet_vdawJq4KXywE85yqvRL4/edit#gid=1593508840
 
@@ -88,11 +78,9 @@ https://docs.google.com/spreadsheets/d/1BMVPpf2mQGBOGs-Ka4-Fet_vdawJq4KXywE85yqv
 https://docs.google.com/spreadsheets/d/1LIYv-0W1wgq8U9gHGq4F3T-hklrIErV042k9OpuF_qU/edit#gid=1593508840
 
 
-OP115 : 확인
 
 참고.
 C:\dArtagnan\kyowon\basecamp\src\componentsHtml\common\AddrAddModal.vue
-
 
 
 C:\dArtagnan\kyowon\basecamp\_core\plugin\utils.js
@@ -105,96 +93,13 @@ $('#container').css('z-index','initial');
 
 
 
-
- /*   if (this.deliveryData.isBasic) {
-      this.deliveryData.isBasic = false;
-    }else {
-      this.deliveryData.isBasic = true;
-    }*/
-
-    this.deliveryData.isBasic ? this.deliveryData.isBasic = false : this.deliveryData.isBasic = true ;
-
-
------------------------------------------------------------------------------------------------------------------------
-  mounted(){
-    const dest = this.$route
-    const lastDomain = dest.fullPath.substring(dest.fullPath.lastIndexOf("/") +1, dest.fullPath.length);
-    this.domain = lastDomain;
-  }
------------------------------------------------------------------------------------------------------------------------
-
-    //this.deliveryData.isBasic ? this.deliveryData.isBasic = false : this.deliveryData.isBasic = true ;
-
-
-
-    if (evt.target.classList.contains('is_active')) {
-      evt.target.classList.remove('is_active');
-    } else {
-      evt.target.classList.add('is_active');
-    }
------------------------------------------------------------------------------------------------------------------------
-
-
-
----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------
 
 고정환경변수
 C:\dArtagnan\kyowon\basecamp\src\common\constant\constant.ts
 
 isSigned  로그인유무
 C:\dArtagnan\kyowon-basecamp-kwop_dev_pc\_core\plugin\navigation.ts
-
-
----------------------------------------------------------------------------------------
-
-커밋방법
-1. Project 최상단 > 마우스오른쪽 > Git>Repository > Push
-2. Git Branches 에서 stg로 변경 > Update
-3. Git Log에서 Branch:origin/.. dev선택 후 dev에서 commit되어 push된 로그를 확인
-4. 해당 항목에서 마우스 오른족 Cherry-Pick 해서 stg에 똑같이 동기화를 한다.
-5. Push 하여 마무리.
-
-
-
-
-
----------------------------------------------------------------------------------------
-        async rebuildDetailData(data) {
-
-            if (typeof data.communityBoardNo === 'undefined') {
-              this.$router.push('/mpg/myClip');
-              return ;
-            }
-
-
-/*            const communityBoardNo = this.$get(data, 'communityBoardNo', '');
-            if (!communityBoardNo) {
-              return;
-            }*/
-
-C:\dArtagnan\kyowon\basecamp\src\components\kwop\presentational\community\details\CommunityDetails.vue
-goBoardInfo
-
-
-C:\dArtagnan\kyowon\basecamp\src\components\kwop\presentational\cart\PaymentInfoBox.vue
-
-element.querySelector('.item_pos_group').classList.add('on');
-
-
-
-Ctrl+P, Ctrl+Q 
-
-
-
-CommunityPostWriteModal
-
----------------------------------------------------------------------------------------
-  showPkgItem(item) {
-    if(this.$route.path.indexOf('/shop/packageDetail') < 0){
-      const productId = typeof this.$get(item, 'productId', '') === 'object' ? this.$get(item, 'productId.value', '') : item.productId;
-      this.$router.push(`/shop/packageDetail/${productId}?pkgDetail=YES&subProduct=${this.$get(item, 'subProductId.value')}`);
-      return;
-    }
 
 
 ---------------------------------------------------------------------------------------
@@ -211,39 +116,6 @@ CommunityPostWriteModal
   C:\Users\resource\kwopdev  <-- resource dev 전용 별도 생성.
 
 4. BackendCoreApplication > Shorten command line : classpath file 로 변경
-
-
----------------------------------------------------------------------------------------
-C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\resources\schema\kwop\displayMng\bestProduct\api.json
-
-"method": "matching",  DB조건 and
-"method": "matchingShould", DB조건 or 
-"method": "fromto",  DB조건 between 
-
-
-
------------------------------------------------------------------------------------------------------------------------
-
-{{protocol}}://{{hostname}}:{{port}}/node/api/bestProductApi>bestList  확인.
-
-{{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/displayMng/bestProduct/api.json  로드스키마
-
-
-
------------------------------------------------------------------------------------------------------------------------
-
-1. API검색 : {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=bestProductApi>bestList
-    : config의 id를 조회하기 위함이다.
-
-2. API Config 확인 :{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/1037642594  863216329
-   : 1에서 조회한 id값으로 조회를 한다.
-
-3. 2에서 조회한 결과에서 설정변경할 값을 key에 value로 세팅한 후 변경한다.
-{{protocol}}://{{hostname}}:{{port}}/node/apiConfig/update.json
-id=863216329
-cacheable=false
-
-
 
 
 ------------------------------------------------------------------------------------------------------------
@@ -277,9 +149,3 @@ src/componentsMobile/kwop/presentational/shop/ProdReview.vue
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=kwop
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=page  : BO
 
-
-
-
-
-모바일 개발 오류건.
-src/componentsMobile/kwop/presentational/media/common/SubMediaContent.vue
