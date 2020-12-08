@@ -11,9 +11,21 @@ Digital eXperience Platform(이하 DXP)
 비용계정항목	:복리후생비(용역) : 본부장펀드
 ---------------------------------------------------------
 
+커밋시 문구 영역
+
+[KWOP] # improvement_37(ver.01) : 상품 상세 하단으로 스크롤 제스쳐할 경우 상단 기능영역 노출되도록 수정
+
+* update
+  src/plugins/vue-animate-scroll.js
+  src/static/market85/css/cnt.css
+  
+- by dArtagnan
 
 
 
+
+
+---------------------------------------------------------
 
 slack
 dArtagnan / 1qaz2wsx!@
