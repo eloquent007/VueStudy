@@ -125,6 +125,21 @@ src/main/resources/mybatis/coupon.xml
 
 
 아래 오류가 발생하는 이유는 Mybatis를 사용 할려면 Mapper 에 interface 등록이 되어야 하나 그렇지 않을경우 발생함.
+(이거 아니고 디비연결 수정해서 처리함.)
+
+
+우선은 KwopCouponService에서 아래 부분을 변경해서 테스트를 진행해 보시기를 바랍니다.
+public SqlSessionTemplate getSessionTemplate() {
+    if (sqlSessionTemplate == null) {
+        sqlSessionTemplate = mybatisService.getSqlSessionTemplate(new JdbcTemplate(dbService.getDataSource("orderDb")), "orderDb");
+    }
+
+    return sqlSessionTemplate;
+}
+
+public SqlSessionTemplate getSessionTemplate() {
+    return mybatisService.getSqlSessionTemplate(new JdbcTemplate(dbService.getDataSource("orderDb")), "orderDb");
+}
 
 
 

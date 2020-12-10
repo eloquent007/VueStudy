@@ -171,3 +171,16 @@ src/componentsMobile/kwop/presentational/shop/ProdReview.vue
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=kwop
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=page  : BO
 
+
+--------------------------------------------------------------------------------------
+sms발송 테이블
+prd사용자 10.1.30.43
+synonyms  > 
+
+select * from SDK_SMS_REPORT where dest_info='^01088752911'
+order by send_date desc;
+
+
+
+
+
