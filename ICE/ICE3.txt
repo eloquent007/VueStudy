@@ -83,13 +83,39 @@ Q : 판매종료상품 말고 전부 화면에 보여주기로 수정.
 1: {{protocol}}://{{hostname}}:{{port}}/node/api?id_matching=productApi>list
 	1-1. postman에서 api 를 조회.
 	1-2. 조건변경이므로 config 에서 "type": "query" 이기때문에. 
+            "config": [
+                {
+                    "id": "338046087",
+                    "targetId": {
+                        "value": "list",
+                        "label": "Product List",
+                        "refId": "api::productApi>list"
+                    },
+                    "configId": "root",
+                    "type": {
+                        "value": "query",
+                        "label": "Query"
+                    },
+
 	1-3.  saleStatus가 판매상태 이므로 해당값 확인.
 		(src/main/resources/schema/kwop/productMng/product/productSchema.json) <-- 해당컬럼 스키마 정보를 알수 있다.
+         
+         
+    1-4. src/main/resources/schema/kwop/productMng/product/api.json         
           {
             "method": "matching",
             "field": "saleStatus",
             "value": "selling"
           },
+
+
+        //원하는값은 바로 아래. 판매상태(saleStatus)가 판매종료(endSelling)가 아닌(notMatching) 상품으로 조회하기.
+          {  
+            "method": "notMatching",
+            "field": "saleStatus",
+            "value": "endSelling"
+          },
+
 2 : {{protocol}}://{{hostname}}:{{port}}/node/apiConfig?id_matching=338046087
 	2-1. config를 수정해야 하기에 해당 id값으로 조회. 
             "config": [   <--1의 조회 결과`	
