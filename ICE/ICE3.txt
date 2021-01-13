@@ -14,21 +14,6 @@ API TYPE : 서비스 대상 구분
 	open : 외부 제공 API
 
 
-
-----------------------------------------------------------
-요렇게 나오면 디버그 정상 상태 
-2020-10-06 09:15:13.316 INFO  244947 - [restartedMain] o.s.web.servlet.DispatcherServlet : Completed initialization in 14 ms 
-2020-10-06 09:15:13.325 INFO  244956 - [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '' 
-2020-10-06 09:15:13.332 INFO  244963 - [restartedMain] net.ion.ice.BackendCoreApplication : Started BackendCoreApplication in 244.672 seconds (JVM running for 246.212) 
-
-해당 오류는 무시해도 된다.
-org.springframework.boot.devtools.restart.SilentExitExceptionHandler$SilentExitException
-	at org.springframework.boot.devtools.restart.SilentExitExceptionHandler.exitCurrentThread(SilentExitExceptionHandler.java:90)
-	at org.springframework.boot.devtools.restart.Restarter.immediateRestart(Restarter.java:180)
-	at org.springframework.boot.devtools.restart.Restarter.initialize(Restarter.java:164)
-	at org.springframework.boot.devtools.restart.Restarter.initialize(Restarter.java:554)
-
-
 ----------------------------------------------------------
 propertyTypes > virtual  ?
 
@@ -81,7 +66,9 @@ Q : 판매종료상품 말고 전부 화면에 보여주기로 수정.
 
 
 1: {{protocol}}://{{hostname}}:{{port}}/node/api?id_matching=productApi>list
-	1-1. postman에서 api 를 조회.
+    {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=productApi>list <--ADMIN
+
+	1-1. postman에서 api 를 조회.Basic > API >
 	1-2. 조건변경이므로 config 에서 "type": "query" 이기때문에. 
             "config": [
                 {
@@ -127,10 +114,31 @@ Q : 판매종료상품 말고 전부 화면에 보여주기로 수정.
                         "refId": "api::productApi>list"
                     },
 3 : 2의 결과값에서 saleStatus 를 찾아서 해당 ID값을 확인함.
+                {
+                    "id": "160541883",
+                    "configId": {
+                        "value": "338046087",
+                        "label": "root",
+                        "refId": "338046087"
+                    },
+                    "method": {
+                        "value": "notMatching",
+                        "label": "Not Matching"
+                    },
+                    "field": "saleStatus",
+                    "value": "endSelling",
+                    "useCacheKey": true,
+                    "label": "saleStatus"
+                }
+
 
 4: {{protocol}}://{{hostname}}:{{port}}/node/apiQuery?id_matching=160541883
 	4-1. 3의 값으로 조회.
 	4-2. 해당 item 의 조건값 확인.
+
+
+  {{protocol}}://{{hostname}}:{{port}}/node/apiQuery?id_matching=30945177  <--운영값
+   
 
 5: 4의 결과 item 에서 변경해야될 id값 value값등 확인.
 	5-1. {{protocol}}://{{hostname}}:{{port}}/node/apiQuery/update.json   post 방식으로

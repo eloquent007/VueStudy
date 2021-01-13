@@ -50,6 +50,8 @@ https://stgadm.market85.com/account/admin/SignIn
 https://adm.market85.com/account/admin/SignIn
 
 admin001/1234
+kwop38 / 1qaz2wsx!@
+
 ------------------------------------------------------------------------------
 
 DB계정 정보. core 소스
