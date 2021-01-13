@@ -58,6 +58,8 @@ cacheable=false
 
 
 
+{{protocol}}://{{hostname}}:{{port}}/node/api/productApi>list  확인.
+{{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/productMng/product/api.json  로드스키마
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -148,58 +150,6 @@ Q : 판매종료상품 말고 전부 화면에 보여주기로 수정.
 6.  2의 결과에서 한컬럼정의가 여러개가 되어 있다면 중복된 값을 삭제 처리 가능하다.
 	6-1. {{protocol}}://{{hostname}}:{{port}}/node/apiQuery/delete.json   <--post 방식으로
 	6-2. Body에 id값  id = 1486285166 를 넣어 삭제 처리.
-
------------------------------------------------------------------------------
-
-orderApplicableCoupons() <--해당 method 
-src/main/java/net/ion/ice/mapper/CouponMapper.java 
-src/main/resources/schema/kwop/promotionMng/coupon/couponTypeSchema.json
-src/main/resources/schema/kwop/promotionMng/coupon/couponApi.json
-src/main/resources/mybatis/coupon.xml
-
-
-아래 오류가 발생하는 이유는 Mybatis를 사용 할려면 Mapper 에 interface 등록이 되어야 하나 그렇지 않을경우 발생함.
-(이거 아니고 디비연결 수정해서 처리함.)
-
-
-우선은 KwopCouponService에서 아래 부분을 변경해서 테스트를 진행해 보시기를 바랍니다.
-public SqlSessionTemplate getSessionTemplate() {
-    if (sqlSessionTemplate == null) {
-        sqlSessionTemplate = mybatisService.getSqlSessionTemplate(new JdbcTemplate(dbService.getDataSource("orderDb")), "orderDb");
-    }
-
-    return sqlSessionTemplate;
-}
-
-public SqlSessionTemplate getSessionTemplate() {
-    return mybatisService.getSqlSessionTemplate(new JdbcTemplate(dbService.getDataSource("orderDb")), "orderDb");
-}
-
-
-
-
-### Error querying database. Cause: java.sql.SQLException: Connection is null.
-### The error may exist in file [/home/m85dev/apps/iceCore/war/WEB-INF/classes/mybatis/coupon.xml]
-### The error may involve net.ion.ice.mapper.CouponMapper.downloadable
-### The error occurred while executing a query
-### SQL: select f.* from ( select ROWNUM r, t.* from ( select ct.* from ( select a.*, regexp_substr(a.CATEGORYID, '[^,]+', 1, 1) categoryA, regexp_substr(a.CATEGORYID, '[^,]+', 1, 2) categoryB, regexp_substr(a.CATEGORYID, '[^,]+', 1, 3) categoryC from COUPONTYPE a where 1 = 1 and USEYN = 1 and ISSUETYPE = 'download' and sysdate between ISSUESTARTDATE and ISSUEENDDATE and sysdate between USAGESTARTDATE and USAGEENDDATE ) ct where 1 = 1 and (select count(*) from COUPON where COUPONTYPENO = ct.COUPONTYPENO) < ct.issueCount and (USETARGETTYPE = 'all' or (USETARGETTYPE = 'category' and ((categoryA is not null and categoryA = ?) or categoryA is null) and ((categoryB is not null and categoryB = ?) or categoryB is null) and ((categoryC is not null and categoryC = ?) or categoryC is null) ) or (USETARGETTYPE = 'brand' and BRANDID like '%' || ? || '%') or (USETARGETTYPE = 'product' and COUPONTYPENO in (select COUPONTYPENO from COUPONTYPEPRODUCTMAP where COUPONTYPENO = ct.COUPONTYPENO and PRODUCTID = ?)) ) order by USAGEENDDATE desc, COUPONTYPENO desc ) t ) f
-### Cause: java.sql.SQLException: Connection is null.
-; uncategorized SQLException; SQL state [null]; error code [0]; Connection is null.; nested exception is java.sql.SQLException: Connection is null.
-org.springframework.jdbc.UncategorizedSQLException:
-### Error querying database. Cause: java.sql.SQLException: Connection is null.
-### The error may exist in file [/home/m85dev/apps/iceCore/war/WEB-INF/classes/mybatis/coupon.xml]
-### The error may involve net.ion.ice.mapper.CouponMapper.downloadable
-### The error occurred while executing a query
-### SQL: select f.* from ( select ROWNUM r, t.* from ( select ct.* from ( select a.*, regexp_substr(a.CATEGORYID, '[^,]+', 1, 1) categoryA, regexp_substr(a.CATEGORYID, '[^,]+', 1, 2) categoryB, regexp_substr(a.CATEGORYID, '[^,]+', 1, 3) categoryC from COUPONTYPE a where 1 = 1 and USEYN = 1 and ISSUETYPE = 'download' and sysdate between ISSUESTARTDATE and ISSUEENDDATE and sysdate between USAGESTARTDATE and USAGEENDDATE ) ct where 1 = 1 and (select count(*) from COUPON where COUPONTYPENO = ct.COUPONTYPENO) < ct.issueCount and (USETARGETTYPE = 'all' or (USETARGETTYPE = 'category' and ((categoryA is not null and categoryA = ?) or categoryA is null) and ((categoryB is not null and categoryB = ?) or categoryB is null) and ((categoryC is not null and categoryC = ?) or categoryC is null) ) or (USETARGETTYPE = 'brand' and BRANDID like '%' || ? || '%') or (USETARGETTYPE = 'product' and COUPONTYPENO in (select COUPONTYPENO from COUPONTYPEPRODUCTMAP where COUPONTYPENO = ct.COUPONTYPENO and PRODUCTID = ?)) ) order by USAGEENDDATE desc, COUPONTYPENO desc ) t ) f
-### Cause: java.sql.SQLException: Connection is null.
-; uncategorized SQLException; SQL state [null]; error code [0]; Connection is null.; nested exception is java.sql.SQLException: Connection is null.
-            at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
-            at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
-            at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
-            at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
-            at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
-            at com.sun.proxy.$Proxy164.selectList(Unknown Source)
-            at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
 
 
 --------------------------------------------------------------------------------------
