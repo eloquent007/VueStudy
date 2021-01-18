@@ -14,14 +14,23 @@ API TYPE : 서비스 대상 구분
 	open : 외부 제공 API
 
 
-----------------------------------------------------------
+------------------------------------------------------------------------------
 propertyTypes > virtual  ?
 
 getCountExcelDownloadItem
 
 
+------------------------------------------------------------------------------
+Client :path: '/svc/customerApi/customerIdDuplicationCheck', 이렇게 호출.
 
-----------------------------------------------------------
+
+src/main/resources/schema/core/user/customerApi.json
+src/main/resources/schema/core/user/kwop/customerApi.json
+
+default 소스가 있고. kwop 커스텀된 소스 폴더가 있다.
+교원은 로딩시 kwop폴더가 있는 소스를 기본으로 보게 되어있다.
+
+------------------------------------------------------------------------------
 API DB정보 
 src/main/resources/schema/profiles/kwop-sta/dataSource.json  <--SID로 연결
 src/main/resources/schema/profiles/kwop-prd/dataSource.json  <-- 운영차이점은 SERVICE_NAME=COMM 으로 연동이 된다.
