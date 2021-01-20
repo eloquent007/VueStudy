@@ -274,3 +274,20 @@ query 는 그 받은 값으로 조건을 만들기 위해 사용 and or 등..
 
 여기서는 파미니터값을 받지 않고 세션 값을 사용함.
 ---------------------------------------------------------------------------------------------------
+
+customer 테이블에서 customerNo 로 조회하기 ( _matching(원더바매칭)이 db의 = 와 같은 뜻임)
+1. {{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?customerNo_matching=110438
+    {{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?customerId_matching=eloquent007
+
+
+2. update (POST처리)
+    {{protocol}}://{{hostname}}:{{port}}/node/customer/update.json
+    1에서 조회해서 나온 id 값이 키값이 됨.
+    id = "110438"
+    authorizationCI ="fasdfasdf"  <-- PropertyType value 
+
+ICE	            DB
+NodeType	    Table
+PropertyType	Column
+Node	        Record
+---------------------------------------------------------------------------------------------------
