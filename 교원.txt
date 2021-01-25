@@ -182,7 +182,27 @@ synonyms  >
 select * from SDK_SMS_REPORT where dest_info='^01088752911'
 order by send_date desc;
 
+--------------------------------------------------------------------------------------
+pc에서 모바일 인증 테스트 방법
+src/common/utils/custom.ts
 
 
+Vue.prototype.$popupCheckPlusMobile = function () {
+    let host = location.host;
+    let protocol = location.protocol;
+    const url = protocol + '//' + host + '/cert/submit';
+    //const url = "http://localm.market85.com:8000/cert/submit";
+    const popup = window.open(
+        url,
+        // 'popupChk',
+        '_blank',
+        // 'width=500, height=750, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no'
+    );
+};
+
+
+새창이 뜨면  F12 모바일모드로 체크하고
+http://localm.market85.com:8000/cert/submit
+해당 주소를 넣어 주어서 테스트 진행 하면 됨.
 
 
