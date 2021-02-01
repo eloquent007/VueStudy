@@ -203,6 +203,6 @@ Vue.prototype.$popupCheckPlusMobile = function () {
 
 새창이 뜨면  F12 모바일모드로 체크하고
 http://localm.market85.com:8000/cert/submit
-해당 주소를 넣어 주어서 테스트 진행 하면 됨.
+해당 주소를 넣어 주어서 테스트 진행 하면 됨.(target = '_blank',)
 
 
