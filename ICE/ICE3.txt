@@ -291,3 +291,31 @@ NodeType	    Table
 PropertyType	Column
 Node	        Record
 ---------------------------------------------------------------------------------------------------
+customerSchema.json
+
+        "event": "findId",
+        "noneExecute": true,
+        "name": "회원 아이디 찾기",
+        "eventActions": [
+          {
+            "action": "findId",
+            "actionName": "회원 아이디 찾기",
+            "actionType": "service",
+            "actionBody": "kwopCustomerService.findId",
+            "orderNo": 1
+          }
+        ],
+        "eventListeners": [
+          {
+            "_event": "delete",
+            "tid": "emailConfig",
+            "actionType": "service",
+            "actionBody": "kwopCustomerService.sendMailAfterEvent",
+            "executeType": "single",
+            "name": "이벤트 완료 후 메일 보내기"
+          }
+        ]
+
+1.기본 이벤트 eventActions
+2. 1 수행후 추가 이벤트 수행.
+---------------------------------------------------------------------------------------------------
