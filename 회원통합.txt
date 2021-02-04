@@ -16,6 +16,17 @@ select * from  CUSTOMER where
 AUTHORIZATIONCI 가 null 인 회원 481명.
 
 
+
+select
+   CUSTOMERID ,
+   PASSWORD,
+   AUTHORIZATIONDI ,   AUTHORIZATIONCI,SIGNDATE
+   from CUSTOMER where  (CUSTOMERID like 'naver%'
+        or CUSTOMERID like 'kakao%'
+        or CUSTOMERID like 'facebook%')
+        and AUTHORIZATIONCI is null;
+        
+
 --------------------------------------------------------------------------------------------------------------------
 
 K멤버스_마켓85통합_v4.0_20201203.pptx  기준.

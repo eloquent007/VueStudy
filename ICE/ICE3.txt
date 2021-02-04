@@ -325,5 +325,21 @@ public void findId(ExecuteContext context) {
 
  리턴값이 없고 void를 사용한 이유임.
 
- ---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
+customerSchema.json
+
+      {
+        "pid": "snsLogin",
+        "name": "SNS로그인",
+        "valueType": "REFERENCED",
+        "referenceType": "snsLogin",
+        "referenceValue": "customerNo",
+        "orderNo": 320
+      },
+
+Node sns = customer.getReferencedList("snsLogin").stream()
+이렇게 호출하는 이유는 customer 에 REFERENCED로 snsLogin 을 customerNo로 조인해 놓았다는 뜻임.
+---------------------------------------------------------------------------------------------------
+
 
