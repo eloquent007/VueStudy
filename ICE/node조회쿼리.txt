@@ -1,0 +1,25 @@
+목록조회
+{{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?customerId_matching=eloquent007
+{{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?authorizationCI_matching=1DiVEbLrbJKd5k/o2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN/pyO5jGSl1VdAdzjFFH5cVerg==
+{{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?name_matching=윤여근
+{{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?customerId_matching=110593 
+
+customerCIDuplicationCheck
+{{protocol}}://{{hostname}}:{{port}}/svc/customerApi/customerCIDuplicationCheck?authorizationCI=1DiVEbLrbJKd5k%2Fo2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN%2FpyO5jGSl1VdAdzjFFH5cVerg%3D%3D&_siteId=kwop&_deviceType=mobile&_appType=mobile
+
+{{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?authorizationCI_matching=1DiVEbLrbJKd5k%2Fo2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN%2FpyO5jGSl1VdAdzjFFH5cVerg%3D%3D
+
+
+업데이트
+{{protocol}}://{{hostname}}:{{port}}/node/customer/update.json  POST
+Body id =110438
+authorizationCI = 1DiVEbLrbJKd5k/o2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN/pyO5jGSl1VdAdzjFFH5cVerg==
+
+
+삭제
+{{protocol}}://{{hostname}}:{{port}}/node/customer/delete.json
+
+
+리로드(json수정하면 필수 수행해야됨.)
+{{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core/user/kwop/customerApi.json
+{{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core/user/kwop/customerSchema.json
