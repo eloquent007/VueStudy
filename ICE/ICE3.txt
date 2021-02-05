@@ -342,4 +342,8 @@ Node sns = customer.getReferencedList("snsLogin").stream()
 이렇게 호출하는 이유는 customer 에 REFERENCED로 snsLogin 을 customerNo로 조인해 놓았다는 뜻임.
 ---------------------------------------------------------------------------------------------------
 
+mybatis 이용쿼리.
+src/main/resources/mybatis/customer.xml
 
+호출은 이런식으로 호출.
+Map<String, Object> resultMap = getSqlSessionTemplate("userDb").selectOne("net.ion.ice.mapper.CustomerMapper.customerGradeGuide", searchMap);

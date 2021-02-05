@@ -23,3 +23,9 @@ authorizationCI = 1DiVEbLrbJKd5k/o2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN/
 리로드(json수정하면 필수 수행해야됨.)
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core/user/kwop/customerApi.json
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core/user/kwop/customerSchema.json
+
+
+_equals
+_matching
+_fromto
+_matchingShould
