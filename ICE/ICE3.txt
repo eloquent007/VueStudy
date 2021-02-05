@@ -42,16 +42,6 @@ C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\resources\schema\kw
 "method": "matchingShould", DB조건 or 
 "method": "fromto",  DB조건 between 
 
-
-
------------------------------------------------------------------------------------------------------------------------
-
-{{protocol}}://{{hostname}}:{{port}}/node/api/bestProductApi>bestList  확인.
-
-{{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/displayMng/bestProduct/api.json  로드스키마
-
-
-
 -----------------------------------------------------------------------------------------------------------------------
 
 1. API검색 : {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=bestProductApi>bestList

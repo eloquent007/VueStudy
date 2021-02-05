@@ -9,6 +9,10 @@ customerCIDuplicationCheck
 
 {{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?authorizationCI_matching=1DiVEbLrbJKd5k%2Fo2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN%2FpyO5jGSl1VdAdzjFFH5cVerg%3D%3D
 
+{{protocol}}://{{hostname}}:{{port}}/node/api/bestProductApi>bestList  확인.
+
+
+
 
 업데이트
 {{protocol}}://{{hostname}}:{{port}}/node/customer/update.json  POST
@@ -23,9 +27,14 @@ authorizationCI = 1DiVEbLrbJKd5k/o2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN/
 리로드(json수정하면 필수 수행해야됨.)
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core/user/kwop/customerApi.json
 {{protocol}}://{{hostname}}:{{port}}/helper/reloadSchema?filePath=core/user/kwop/customerSchema.json
+{{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/displayMng/bestProduct/api.json 
 
 
 _equals
 _matching
 _fromto
 _matchingShould
+
+"method": "matching",  DB조건 and
+"method": "matchingShould", DB조건 or 
+"method": "fromto",  DB조건 between 
