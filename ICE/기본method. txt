@@ -1,0 +1,40 @@
+1.(Node) NodeQuery.build
+   1-1. src/main/java/net/ion/ice/core/node/NodeQuery.java
+
+    public static NodeQuery build(String tid) {
+
+        NodeType nodeType = NodeUtils.getNodeType(tid);
+        return build(nodeType);
+    }
+
+
+    1-2. src/main/java/net/ion/ice/core/node/NodeUtils.java    
+    public static NodeType getNodeType(String typeId) {
+        if (getNodeService() == null)
+            throw new NodeTypeNotFoundException("NodeService 초기화 안됨.");
+        return nodeService.getNodeType(typeId);
+    }
+
+
+        // 파생상품 Id들 조회
+        List<Map<String, Object>> productList = (List<Map<String, Object>>) NodeQuery.build("product")
+				.matching("repProductId", productId)	// 대표상품Id
+				.matching("approvalStatus", "approval")	// 승인상태 = 승인
+				.matching("saleStatus", "selling")		// 판매상태 = 판매
+				.matching("showYn", "true")				// 노출상태 = 노출
+				.getList();
+
+
+
+
+2. List<Node> deliveryNodeList = NodeUtils.getNodeList("delivery", "customerNo_matching=".concat(customerNo).concat("&isBasic=true"));
+   2-1. src/main/java/net/ion/ice/core/node/NodeUtils.java
+    public static List<Node> getNodeList(String typeId, String searchText) {
+        return getNodeService().getNodeList(typeId, searchText);
+    }
+
+getNodeList
+getNode
+
+JsonUtils
+MapUtils
