@@ -94,39 +94,6 @@ dev.config.ts
 ------------------------------------------------------------------------------
 
 
-
-결함관리
-https://docs.google.com/spreadsheets/d/1BMVPpf2mQGBOGs-Ka4-Fet_vdawJq4KXywE85yqvRL4/edit#gid=1593508840
-
-결함관리사본
-https://docs.google.com/spreadsheets/d/1LIYv-0W1wgq8U9gHGq4F3T-hklrIErV042k9OpuF_qU/edit#gid=1593508840
-
-
-
-참고.
-C:\dArtagnan\kyowon\basecamp\src\componentsHtml\common\AddrAddModal.vue
-
-
-C:\dArtagnan\kyowon\basecamp\_core\plugin\utils.js
-
-
-$("section#qnb.qnb_sec.fix").css({zIndex:500});
-
-
-$('#container').css('z-index','initial');
-
-
-
- ---------------------------------------------------------------------------------------
-
-고정환경변수
-C:\dArtagnan\kyowon\basecamp\src\common\constant\constant.ts
-
-isSigned  로그인유무
-C:\dArtagnan\kyowon-basecamp-kwop_dev_pc\_core\plugin\navigation.ts
-
-
----------------------------------------------------------------------------------------
 교원 core Setting
 
 1. File > Project Structure > Project Settings( > Project > Project SDK : java 1.8

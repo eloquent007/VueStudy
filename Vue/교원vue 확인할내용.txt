@@ -1,0 +1,35 @@
+$get 선언
+
+@types/index.d.ts
+    $load: (key: string, options: IFetchOptions) => void;
+    /**
+     * $read
+     *
+     */
+    $read: <DataFrame extends any>(key: string) => DataFrame;
+    $rev: <DataFrame extends any>(key: string) => IRequestStatement<DataFrame>;
+    $get: (data: any, path: string, defaults: any) => any;
+    $$config: any;
+    $store: Store<any>;
+    $cmsSrc: (data: any) => string;
+------------------------------------------------------------------------------------------------
+PropertyTypes 선언
+
+import { ILastItemOn } from '@/models/PropertyTypes';
+this.$localStorageManager(localProdKey, 'update', saveLastProducts);
+
+------------------------------------------------------------------------------------------------
+this.$emit 호출
+  updateNumber(): void {
+      this.$emit('updateParentNumber', this.lastProductsReal.length);
+    }
+
+------------------------------------------------------------------------------------------------
+고정환경변수
+C:\dArtagnan\kyowon\basecamp\src\common\constant\constant.ts
+
+isSigned  로그인유무
+C:\dArtagnan\kyowon-basecamp-kwop_dev_pc\_core\plugin\navigation.ts
+
+------------------------------------------------------------------------------------------------
+
