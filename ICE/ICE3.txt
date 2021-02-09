@@ -13,14 +13,76 @@ API TYPE : 서비스 대상 구분
 	internal : 내부 솔루션 연동을 위한 API
 	open : 외부 제공 API
 
+============================================기본==================================================
+ICE	            DB
+NodeType	    Table
+PropertyType	Column
+Node	        Record
 
 ------------------------------------------------------------------------------
-propertyTypes > virtual  ?
+	목록조회 
+URL	http://[ICE-CORE Host]/node/{nodeTypeID}/list.json
 
-getCountExcelDownloadItem
+Method	GET
+Parameter	page : 페이지 번호(default : 1)
+pageSize : 페이지에 노출된 데이터 건수
+sorting : 정렬할 pid  + ‘asc | desc’
+검색 : 정렬할 pid + ‘_’ + 검색방식 
 
+(검색방식) 
+ matching : 검색어와 값이 같은 것을 검색
+ wildcard : like 검색
+ above: 검색어보다 값이 큰 것을 검색
+ below: 검색어보다 값이 작은 것을 검색
+예) http://[ICE-CORE Host]/node/testBoard/list.json?page=1&pageSize=10&sorting=id asc&title_wildcard=제목
 
 ------------------------------------------------------------------------------
+	상세조회
+URL	http://[ICE-CORE Host]/node/{nodeTypeID}/read.json
+
+Method	GET
+Parameter	idable이 true인 pid
+예)
+http://[ICE-CORE Host]/node/testBoard/read.json?id=101
+
+------------------------------------------------------------------------------
+	등록
+URL	http://[ICE-CORE Host]/node/{nodeTypeID}/create.json
+
+Method	POST
+Parameter	등록할 pid
+idable이 ture이며 idType이 autoIncrement인 경우 생략 가능
+예)
+http://[ICE-CORE Host]/node/testBoard/create.json
+title: 제목
+description: 내용..
+
+------------------------------------------------------------------------------
+	수정
+http://[ICE-CORE Host]/node/testBoard/update.json
+URL	http://[ICE-CORE Host]/node/{nodeTypeID}/update.json
+
+Method	POST
+Parameter	idable이 ture인 pid는 필수
+수정할 pid
+예)
+http://[ICE-CORE Host]/node/testBoard/update.json
+id: 101
+title: 제목만 수정
+------------------------------------------------------------------------------
+	삭제
+URL	http://[ICE-CORE Host]/node/{nodeTypeID}/delete.json
+
+Method	POST
+Parameter	idable이 true인 pid
+예)
+http://[ICE-CORE Host]/node/testBoard/delete.json?id=101
+
+------------------------------------------------------------------------------
+
+====================================================================================================
+
+
 Client :path: '/svc/customerApi/customerIdDuplicationCheck', 이렇게 호출.
 
 
