@@ -4,6 +4,10 @@
 {{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?name_matching=윤여근
 {{protocol}}://{{hostname}}:{{port}}/node/customer/list.json?customerId_matching=110593 
 
+tid 조회
+{{protocol}}://{{hostname}}:{{port}}/node/nodeType/list.json?tid_matching=customer
+
+
 customerCIDuplicationCheck
 {{protocol}}://{{hostname}}:{{port}}/svc/customerApi/customerCIDuplicationCheck?authorizationCI=1DiVEbLrbJKd5k%2Fo2kgjayTmEQNKVQQUVfP0cPZblz0A0siAT4h0wGpPJR8gN%2FpyO5jGSl1VdAdzjFFH5cVerg%3D%3D&_siteId=kwop&_deviceType=mobile&_appType=mobile
 
