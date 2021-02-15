@@ -123,6 +123,20 @@ tar cvf cache_stg_2020_02_04_1012.tar cache  <--chche 폴더 압축하기
 
 tar cvf cache_dev_2020_11_10.tar cache  
 
+------------------------------------------------------------------------------------------------------------
+운영 cache 가져오는 방법
+운영CORE1	m85-07	172.16.30.93
+m85dev / market85@99
+
+해당 서버 : /home/m85dev/apps/resource/cache 를
+cd /home/m85dev/apps/resource/
+로컬 컴퓨터 : C:\Users\resource\kwopsta\cache 에 받아 온다.
+
+
+
+
+cd /home/m85dev/apps/resource/
+tar cvf cache_prd1_2020_02_15_1710.tar cache  <--chche 폴더 압축하기
 
 
 
