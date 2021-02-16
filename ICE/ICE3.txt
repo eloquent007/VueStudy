@@ -104,6 +104,12 @@ C:\dArtagnan\kyowon\backendCore\kyowon-backend-core\src\main\resources\schema\kw
 "method": "matchingShould", DB조건 or 
 "method": "fromto",  DB조건 between 
 
+(검색방식) 
+ matching : 검색어와 값이 같은 것을 검색
+ wildcard : like 검색
+ above: 검색어보다 값이 큰 것을 검색
+ below: 검색어보다 값이 작은 것을 검색
+
 -----------------------------------------------------------------------------------------------------------------------
 
 1. API검색 : {{protocol}}://{{hostname}}:{{port}}/adm/api/read?id=bestProductApi>bestList
@@ -118,7 +124,7 @@ id=863216329
 cacheable=false
 
 
-
+API조회
 {{protocol}}://{{hostname}}:{{port}}/node/api/productApi>list  확인.
 {{protocol}}://{{hostname}}:{{port}}/helper/loadSchema?filePath=kwop/productMng/product/api.json  로드스키마
 
