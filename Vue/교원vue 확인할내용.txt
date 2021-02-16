@@ -32,4 +32,27 @@ isSigned  로그인유무
 C:\dArtagnan\kyowon-basecamp-kwop_dev_pc\_core\plugin\navigation.ts
 
 ------------------------------------------------------------------------------------------------
+showPopup 과 modal 차이
+    openModal(){
+        this.$showPopup(ViewNoticeModal['options'], {
+        //this.$modal.show(ViewNoticeModal['options'], {
+            notice: this.notice
+        }, {
+            height: 'auto'
+        })
+    }
+------------------------------------------------------------------------------------------------    
+ bodyScroll true, false 확인.
+  
+  async mounted() {
+    this.$bodyScroll(false);
 
+  beforeDestroy() {
+    this.$bodyScroll(true);
+  }
+------------------------------------------------------------------------------------------------   
+  if (document.referrer && document.referrer.indexOf('market85') != -1) {
+    this.$router.back();
+  } else {
+    this.goToLink('home');
+  }
